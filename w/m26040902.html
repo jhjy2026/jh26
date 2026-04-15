@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+
+/* 以下三段为picture的CSS代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+  <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">简谱基础知识：怎么看拍号和调号？</h1>
+    <p class="article-meta">学习笔记 &nbsp;|&nbsp; 发布日期：2026-04-08</p>
+    
+    <div class="article-body">
+      <p>简谱中的拍号和调号是识谱的两大核心。</p>
+      <p>&nbsp;一、<font color="#FF0000"><b>拍号</b></font>：音乐的“节拍标尺” 拍号告诉你一小节有几拍，以及以什么音符为一拍。</p>
+      <p>&nbsp;<font color="#0000FF">1）<b>常见拍号解读</b></font>&nbsp;</p>
+      <p>拍号由两个数字上下叠放组成，在简谱中常写作分数形式，如 2/4、3/4、4/4。</p>
+      <p>&nbsp;&#8226; 上方的数字：表示每小节的拍数。</p>
+      <p>&nbsp;&#8226; 下方的数字：表示以哪种音符为一拍。在简谱中，这个“分母”基本固定为 4，代表四分音符为一拍。</p>
+      <p>&nbsp;举例：</p>
+      <p>&nbsp;&#8226; 2/4 拍：以四分音符为一拍，每小节有2拍。强弱规律是：强-弱。常见于进行曲，如《义勇军进行曲》。</p>
+<p>&nbsp;* 3/4 拍：以四分音符为一拍，每小节有3拍。强弱规律是：强-弱-弱。典型的圆舞曲（华尔兹）节奏，如《雪绒花》。</p>
+      <p>&nbsp;* 4/4 拍：以四分音符为一拍，每小节有4拍。强弱规律是：强-弱-次强-弱。这是流行音乐、民谣中最常见的拍号，常简写为 C（不是C调的意思）。&nbsp;</p>
+      <p>* 6/8 拍：以八分音符为一拍，每小节有6拍。强弱规律是：强-弱-弱-次强-弱-弱。具有律动感，如船歌。</p>
+      <p>&nbsp;<b><font color="#0000FF">2）如何应用拍号打拍子</font></b></p>
+      <p>&nbsp;1. 确定单位拍：先看下方数字，确定以什么音符为一拍（简谱中几乎都是四分音符）。</p>
+      <p>&nbsp;2. 数每小节的拍数：用脚或手匀速地打拍子，每小节数够拍号要求的拍数。</p>
+      <p>&nbsp;3. 感受强弱：注意重音位置，这有助于把握歌曲的风格和情感。&nbsp;</p>
+      <p>二、<font color="#FF0000"><b>调号</b></font>：音乐的“音高基准”&nbsp;</p>
+      <p>调号告诉你这首曲子的基准音高，即“1”（Do）对应什么音。它通常出现在歌名后面，用大写字母表示。&nbsp;</p>
+      <p><font color="#0000FF"><b>1）调号的含义</b></font></p>
+      <p>&nbsp;&#8226; 1 = C：表示“1”（Do）的音高等于国际标准音高 C。这是最基础的调，钢琴上的白键就是C大调音阶。</p>
+      <p>&nbsp;* 1 = D：表示“1”（Do）的音高等于 D。这意味着整首曲子的音都比C调高一个全音。</p>
+      <p>&nbsp;* 1 = G：表示“1”（Do）的音高等于 G。比C调高一个纯五度。</p>
+      <p>&nbsp;&#8226; 1 = F：表示“1”（Do）的音高等于 F。比C调低一个纯五度。&nbsp;</p>
+      <p>* 小调：会用 6 = A（A小调）等形式表示，其音阶与自然大调不同。</p>
+      <p>&nbsp;<font color="#0000FF"><b>2）调号的实际意义</b></font></p>
+      <p>&nbsp;1. 确定音高：如果你用乐器（如钢琴、手风琴）或需要跟着原唱演唱，调号告诉你应该用什么调来演奏或演唱，这直接影响音高。&nbsp;</p>
+      <p>2. 判断难易与色彩：&nbsp;</p>
+      <p>&#9702; C调：音在键盘白键上，最容易，是入门首选。</p>
+      <p>&nbsp;* 其他调：可能涉及黑键，指法更复杂，但某些调性（如D调明亮，F调柔和）会带来不同的音乐色彩。</p>
+      <p>&nbsp;3. 移调：如果你觉得原调太高或太低，可以根据调号指示，用变调夹（吉他）或移调功能（电子琴）将整首曲子升高或降低。&nbsp;</p>
+      <p>三、<b><font color="#FF0000">结合示例实战</font></b>&nbsp;</p>
+      <p>以《小星星》为例，它的谱面信息通常是： 1 = C ,  2/4 , 1 1 | 5 5 | 6 6 | 5 - |&nbsp;</p>
+      <p>1. 看调号 1 = C：这是C调，音高基准是C。所有数字对应的音都在钢琴的白键上。&nbsp;</p>
+      <p>2. 看拍号 2/4：这是2/4拍，以四分音符为一拍，每小节有2拍。&nbsp;</p>
+      <p>3. 结合识谱：</p>
+      <p>&nbsp;* 第一小节：1 1 是两个一拍的音，加起来正好2拍，符合2/4拍。</p>
+      <p>&nbsp;&#9702; 第二小节：5 5 同理。</p>
+      <p>&nbsp;* 第三小节：6 6 同理。</p>
+      <p>&nbsp;&#9702; 第四小节：5 - ，“5”后面跟一个减号“-”，表示这个音延长一拍。所以它占2拍，也符合2/4拍。&nbsp;</p>
+      <p><font color="#FF0000"><b>总结</b></font>：</p>
+      <p>拍号：规定节奏的快慢和强弱。如 3/4，读作“四三拍”，指每小节3拍。</p>
+      <p>调号：规定音高的基准。如 1 = G，1等于哪个音名，就是什么调。</p>
+	  
+    </div>
+  </div>
+
+  <!-- 底部横栏 -->
+  <img class="footer-banner" src="https://via.placeholder.com/1200x150?text=底部横栏" alt="底部横栏">
+
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>

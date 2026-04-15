@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+
+/* 以下三段为picture的CSS代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+   <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">构图的艺术：三分法与引导线</h1>
+    <p class="article-meta">学习笔记&nbsp;|&nbsp;&nbsp; 2026-04-12</p>
+    
+    <div class="article-body">
+          <p>构图是摄影、绘画与设计中的“骨架”，它决定了视觉元素的组织方式，直接影响作品的叙事力与美感。</p>
+		<p>三分法与引导线是其中最基础、最实用的两种法则，它们分别解决“元素放在哪里”和“视线往哪走”的问题。
+</p>
+		<p>&nbsp;</p>
+			<p><font color="#0000FF"><b>一、三分法：让画面“稳而不呆”
+</b></font>
+</p>
+		<p>1. 什么是三分法？
+</p>
+		<p>将画面横向、纵向各用两条等距的虚拟直线分割，形成九宫格。画面被分为9个区域，交叉点称为视觉兴趣点。</p>
+		<p>&nbsp;&#8226; 核心原则：
+  主体放在交叉点附近，而非正中心；
+  地平线、海天线等水平线条尽量贴近上下三分之一线，而非居中。
+</p>
+		<p>2. 为什么有效？</p>
+		<p>&nbsp;&#8226; 符合视觉习惯：人眼会自然先扫视这些交叉区域。</p>
+		<p>&nbsp;&#8226; 制造张力与呼吸感：比死板的居中构图更有动态与空间感。</p>
+		<p>&nbsp;&#8226; 平衡稳定：既不过分偏左/右，也不显得头重脚轻。</p>
+		<p>&nbsp;3. 典型应用场景</p>
+		<p>&nbsp;&#8226; 风光摄影：
+  天空精彩 → 地平线放在下三分之一线，让天空占2/3；
+  地面前景有趣 → 地平线放在上三分之一线，让地面占2/3。</p>
+		<p>&nbsp;&#8226; 人像摄影：
+  眼睛放在上三分之一线附近的交叉点，是最经典的人像构图。</p>
+		<p>&nbsp;&#8226; 静物与街拍：
+  主体偏离中心，留出视觉延伸空间，画面更生动。</p>
+		<p>&nbsp;4. 注意事项</p>
+		<p>&nbsp;&#8226; 并非绝对规则：对称建筑、极简抽象、强烈几何感题材，居中构图往往更好。</p>
+		<p>&nbsp;&#8226; 避免机械套用：若画面本身有强引导线或强烈情绪，可灵活打破三分法。</p>
+		<p>&nbsp;</p>
+			<p><b><font color="#0000FF">二、引导线：为视线“铺路”</font></b></p>
+		<p>&nbsp;1. 什么是引导线？
+画面中任何具有方向性、延伸感的线条或形状，能够把观众的视线从画面边缘引向主体，或引导至纵深空间。</p>
+		<p>&nbsp;2. 常见类型</p>
+		<p>&nbsp;&#8226; 实际线条：道路、河流、栏杆、桥梁、海岸线、建筑轮廓。</p>
+		<p>&nbsp;&#8226; 隐含线条：人物的视线方向、肢体指向、光影分界线、色彩渐变带。</p>
+		<p>&nbsp;&#8226; 重复元素：一排树木、连续的窗户、阶梯、路灯形成的节奏线。</p>
+		<p>&nbsp;3. 作用与效果</p>
+		<p>&nbsp;&#8226; 强化主体：视线被“推”到你想让人看的地方。</p>
+		<p>&nbsp;&#8226; 增加纵深感：强化透视，让二维画面有三维空间感。</p>
+		<p>&nbsp;&#8226; 营造情绪：
+  上升的线条 → 希望、力量；
+  下降/汇聚的线条 → 压抑、紧张、消失感。</p>
+		<p>&nbsp;4. 运用技巧</p>
+		<p>&nbsp;&#8226; 起点在画面边缘：引导线最好从角落或边缘进入，避免截断画面。</p>
+		<p>&nbsp;&#8226; 指向明确：线条应清晰指向主体，而不是“跑偏”。</p>
+		<p>&nbsp;&#8226; 结合三分法：引导线的终点落在三分法交叉点上，效果最强。</p>
+		<p>&nbsp;5. 经典场景</p>
+		<p>&nbsp;&#8226; 风光：蜿蜒小路引向远山，河流引向日落。</p>
+		<p>&nbsp;&#8226; 建筑：旋转楼梯、走廊、拱门形成的强烈汇聚线。</p>
+		<p>&nbsp;&#8226; 街头：斑马线、路灯、广告牌构成的城市引导线。</p>
+		<p>&nbsp;</p>
+			<p><font color="#0000FF"><b>三、三分法与引导线的关系</b></font></p>
+		<p>&nbsp;三分法  
+解决元素放在哪里的问题，引导线解决视线往哪里走的问题；</p>
+		<p>&nbsp;三分法
+本质是位置布局规则，引导线本质是视线流动路径；</p>
+		<p>三分线的
+作用是平衡、稳定、突出主体，引导线的作用是引导注意力、增强空间感；</p>
+		<p>二者关系：引导线的终点常落在三分法交叉点上，三分法为引导线提供“落点”； </p>
+		<p>一句话总结：用三分法决定主体“站哪儿”，用引导线决定观众“怎么走到那儿”。</p>
+		<p>&nbsp;</p>
+			<p><font color="#0000FF"><b>四、实践建议</b></font></p>
+		<p>&nbsp;1. 前期构图时：</p>
+		<p>&nbsp;开启相机/手机网格线，先想主体放哪个交叉点，再看有没有可用作引导线的元素。</p>
+		<p>&nbsp;2. 后期裁剪时：</p>
+		<p>&nbsp;若原图主体居中、略显呆板，可尝试按三分法裁剪；</p>
+		<p>&nbsp;若画面杂乱，可寻找或强化一条引导线，简化视觉路径。</p>
+		<p>&nbsp;3. 刻意练习：</p>
+		<p>&nbsp;连续拍摄同一场景，一张严格用三分法，一张刻意加入引导线，对比观感差异。</p>
+		<p>&nbsp;掌握这两种法则，你就能在大多数日常场景中快速做出“看起来就对”的构图选择。</p>
+	  
+    </div>
+  </div>
+
+  <!-- 底部横栏 -->
+  <img class="footer-banner" src="https://via.placeholder.com/1200x150?text=底部横栏" alt="底部横栏">
+
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>

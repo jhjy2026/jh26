@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8">
+			<meta name="generator" content="CherryTree">
+			<link rel="stylesheet" href="cherrytree0.99.24res/styles3.css" type="text/css">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+
+/* 以下三段为picture的CSS代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+   <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">手机摄影要注意的四个核心问题</h1>
+    <p class="article-meta">学习笔记 &nbsp;|&nbsp;&nbsp; 2026-04-12</p>
+    
+    <div class="article-body">
+          <p class="article-meta">机摄影虽然门槛低，但受限于物理硬件（小传感器、固定光圈）和软件算法（计算摄影），在拍摄时需要避开一些特有的“坑”。相比相机，手机摄影更需要讲究稳定性、光线利用和软件功能的合理取舍。</p>
+			<p class="article-meta">以下是手机摄影特别需要注意的四个核心问题：</p>
+			<p class="article-meta">&nbsp;</p>
+			<p class="article-meta"><font color="#0000FF"><b>一、防抖是第一要义：警惕“糊片”</b></font></p>
+			<p class="article-meta">手机传感器很小，为了获得足够的进光量，手机往往会自动拉高 ISO 
+			或降低快门速度。一旦快门低于“安全快门”（手机通常难以手持 1/10秒 以下），照片就会发虚。</p>
+			<p class="article-meta">1. 核心痛点</p>
+			<p class="article-meta">夜景/室内必糊：光线稍暗，手机快门会自动变慢，手持极易拍虚。</p>
+			<p class="article-meta">长焦端不稳：使用 2x、5x 甚至更高倍数变焦时，镜头焦距变长，手抖会被放大。</p>
+			<p class="article-meta">2. 应对策略</p>
+			<p class="article-meta">时刻稳住：拍照时手肘夹紧身体，或者依靠墙壁、桌子支撑。</p>
+			<p class="article-meta">善用音量键/耳机线控：减少点击屏幕时的手部震动。</p>
+			<p class="article-meta">长焦必用支架：超过 3 倍光学变焦拍摄时，建议借助八爪鱼三脚架或临时倚靠。</p>
+			<p class="article-meta">开启连拍：抓拍运动物体时，按住快门连拍，后期挑选最清晰的一张。</p>
+			<p class="article-meta">&nbsp;</p>
+			<p class="article-meta"><font color="#0000FF"><b>二、光线是灵魂：拒绝“暴力拉高曝光”</b></font></p>
+			<p class="article-meta">
+			手机镜头的动态范围（宽容度）远低于专业相机。这意味着它在处理“大光比”（亮部很亮、暗部很暗）场景时会吃力。</p>
+			<p class="article-meta">1. 核心痛点</p>
+			<p class="article-meta">高光死白：拍天空、灯光时，亮部很容易没有细节，变成一片惨白。</p>
+			<p class="article-meta">阴影死黑：逆光拍人像，人脸容易黑成一团，强行提亮会有严重噪点。</p>
+			<p class="article-meta">2. 应对策略</p>
+			<p class="article-meta">宁欠勿曝：拍摄时稍微降低曝光补偿（EV -0.3 或 
+			-0.7），保留高光细节，后期再提亮阴影，比硬拉高曝光效果好得多。</p>
+			<p class="article-meta">
+			<meta http-equiv="content-type" content="text/html; charset=utf-8">
+			<title></title>
+			<meta name="generator" content="CherryTree">
+			<link rel="stylesheet" href="cherrytree0.99.24res/styles3.css" type="text/css">
+			寻找柔光：手机最喜欢阴天、清晨、傍晚的光线，避免正午顶光和强烈的直射阳光。</p>
+			<p class="article-meta">慎用闪光灯：手机自带 LED 补光灯功率小、光线硬，要尽量利用环境光。</p>
+			<p class="article-meta">&nbsp;</p>
+			<p class="article-meta"><font color="#0000FF"><b>三、焦段的选择：别滥用数码变焦</b></font></p>
+			<p class="article-meta">
+			手机通常有多个镜头（超广角、主摄、长焦）。除了光学变焦（切换镜头），剩下的“放大”都是数码变焦（裁切像素），会导致画质断崖式下跌。</p>
+			<p class="article-meta">1. 核心痛点</p>
+			<p class="article-meta">画质模糊：在相册里看着还行，放大后全是涂抹感和噪点。</p>
+			<p class="article-meta">畸变严重：超广角镜头（0.5x/0.6x）边缘变形极大，拍人像容易把腿拍歪或脸变形。</p>
+			<p class="article-meta">2. 应对策略</p>
+			<p class="article-meta">优先原生焦段：尽量使用 1x（主摄）​ 和 光学变焦倍数（如 3x, 5x）​ 拍摄。</p>
+			<p class="article-meta">靠近拍摄：如果没长焦镜头，宁可走近一点拍，也不要站在远处放大 10 倍拍。</p>
+			<p class="article-meta">
+			超广角避坑：拍风景、建筑时可以用超广角，但拍人像时尽量避免，特别是全身照，容易把人拍胖、拉长。</p>
+			<p class="article-meta">&nbsp;</p>
+			<p class="article-meta"><font color="#0000FF"><b>四、注意AI算法双刃剑：慎用 HDR 和滤镜</b></font></p>
+			<p class="article-meta">代手机摄影极度依赖算法，HDR（高动态范围）和 AI 场景识别是标配。但这有时会帮倒忙。</p>
+			<p class="article-meta">1. 核心痛点</p>
+			<p class="article-meta">HDR 重影：拍摄移动的物体（如奔跑的狗、车流）时，HDR 合成可能会导致重影、拖影。</p>
+			<p class="article-meta">过度锐化：手机为了讨好眼球，会自动增加锐度和饱和度，导致皮肤纹理粗糙、颜色艳俗。</p>
+			<p class="article-meta">夜景模式过长：手持夜景模式通常需要 2-4 秒的合成时间，期间手不能抖，否则全毁。</p>
+			<p class="article-meta">2. 应对策略</p>
+			<p class="article-meta">关掉 AI 摄影辅助：对于有一定经验的拍摄者，关闭自动识别场景功能，能获得更真实的色彩。</p>
+			<p class="article-meta">手动锁定对焦与曝光：长按屏幕锁定对焦（AF/AE 
+			锁定），防止手机在构图微调时反复“拉风箱”重新测光。</p>
+			<p class="article-meta">采用RAW 格式（如果有）：高端手机支持拍摄 RAW 
+			格式，保留更多原始数据，给后期修图留更大空间（但文件体积巨大）。</p>
+			<p class="article-meta">&nbsp;</p>
+			<p class="article-meta"><font color="#0000FF"><b>五、手机摄影速查清单</b></font></p>
+			<p class="article-meta">
+			<meta http-equiv="content-type" content="text/html; charset=utf-8">
+			<title></title>
+			<meta name="generator" content="CherryTree">
+			<link rel="stylesheet" href="cherrytree0.99.24res/styles3.css" type="text/css">
+			白天户外​要特别注意避免正午强光，建议找树荫或侧光，降低 EV 防过曝。</p>
+			<p class="article-meta">室内/餐厅​要特别注意光线杂、色温乱，建议尽量靠近窗户（自然光），避免头顶黄光直射。</p>
+			<p class="article-meta">夜景​要特别注意手抖、噪点多，须依托桌面或三脚架，开启夜景模式。</p>
+			<p class="article-meta">人像​要特别注意不要美颜过度、畸变，建议使用 1x 或 2x 
+			焦段，关闭过度磨皮，注意眼神光。</p>
+			<p class="article-meta">美食要特别注意俯拍变形。建议从上往下垂直拍（超广角），或从 45° 角用主摄拍。<p class="article-meta">一句话总结：手机摄影要扬长避短，关键就在于：稳住机身、伺候好光线、尊重光学物理规律，不要迷信数码变焦和一键美颜。</div>
+  </div>
+
+  <!-- 底部横栏 -->
+  <img class="footer-banner" src="https://via.placeholder.com/1200x150?text=底部横栏" alt="底部横栏">
+
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>

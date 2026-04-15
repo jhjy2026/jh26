@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+/* 以下三段为picture的CSS代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+   <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">如何把握和表达朗诵作品的情感与基调？</h1>
+    <p class="article-meta">学习笔记 &nbsp;|&nbsp; 发布日期：2026-04-08</p>
+    
+    <div class="article-body">
+      <p>朗诵不仅是“念字”，更是一场将无声文字转化为有声艺术的“二度创作”。要精准把握并表达作品的情感与基调，按照“理解—内化—外化”这三个步骤层层递进。
+这就像烹饪，首先要读懂食谱（理解），然后备好食材（内化），最后才是开火烹饪（外化）。以下是具体的操作指南：</p><br>
+<p><b>第一步：深度理解——为情感“定调”</b></p>
+<p>在开口之前，你需要像侦探一样去剖析文本，这是情感表达的基石。</p>
+<p>1. 知人论世，寻找情感源头 每一篇作品都烙印着时代的痕迹。忽略背景，情感就会“跑偏”。</p>
+<p>• 了解背景： 比如朗诵食指的《相信未来》，若不了解那个特殊年代的困境，你就无法读出“在绝望中坚守希望”的倔强，容易把坚定读成空洞的口号。</p>
+<p>• 分析作者： 读李清照的词，需区分她前期的“沉醉不知归路”（青春烂漫）与后期的“凄凄惨惨戚戚”（国破家亡），基调截然不同。</p>
+
+<p>2. 拆解脉络，绘制“情感地图” 作品的情绪通常不是单一的，而是像河流一样有起伏。
+<p>◇ 寻找层次： 以余光中的《乡愁》为例，情感是从“小时候”的懵懂思念，到“长大后”的急切期盼，再到“后来”的深沉悲痛，最后是“现在”的厚重怅惘。
+<p>◇ 标记节点： 在稿件上标出情感的起点、高潮和落点，避免平铺直叙。
+
+<p>3. 抓住“情绪关键词” 找出文中几个核心的“情感开关”。
+<p>◇ 例如海子《面朝大海，春暖花开》中的“幸福”，不是狂喜，而是历经孤独后对平凡的向往；北岛《回答》中的“蔑视”，是对荒诞现实的冷峻反抗。找准这些词，就抓住了基调的“基准线”。
+<br>
+<br>
+<p>️ <b>第二步：内化共情——让情感“落地” </b>
+<p>读懂了还不够，你需要将作品的情感转化为自己的真实感受，而不是刻意“表演”。
+<p>1. 角色代入（我就是“他”） 尝试“成为”作者或叙述者。
+<p>◇ 朗诵李娟《阿勒泰的角落》时，不要急着表现“自由”，试着想象自己就是那个在风雪中照料羊群的少女，感受指尖的寒意和羊群的呼唤，那种坚韧与温柔会自然从心底涌出。
+
+<p>2. 细节联想（画面感） 调动你的感官记忆，让文字变成画面。
+<p>◇ 朗诵李白《静夜思》时，联想秋夜的清冷、月光的皎洁，思乡的惆怅会自然浸润你的语调，无需刻意煽情。
+<p>◇ 朗诵《中国力量》时，心里要装着科研人员熬红的双眼、工人粗糙的双手，声音才会有温度。
+<br>
+<br>
+<p>️ <b>第三步：技巧外化——让声音“传情” </b>
+<p>如果说共情是源头，声音技巧就是让情感流淌的渠道。你需要运用以下“武器”来精准控制：
+<p>1. 语调与音色（情绪的调色板）
+<p>◇ 音色： 表达深沉哀婉时，声音下沉、略带沙哑；表达明亮欢快时，音色清亮上扬。
+<p>◇ 语调： 疑问、号召用高升调；陈述、悲伤用降抑调；冷静的叙述用平直调。
+
+<p>2. 停连与重音（逻辑与强调）
+<p>◇ 停顿： 停顿不是空白，而是情感的发酵。在长句中间或高潮前适当停顿，能制造悬念，给听众回味空间（此时无声胜有声）。
+<p>◇ 重音： 重音是点燃情绪的引信。比如“这就是中国力量”，“中国力量”四个字要一字一顿，用气息托着送出去，让声音有重量。
+
+<p>3. 语速与节奏（情绪的脉搏）
+<p>◇ 快慢： 紧张、激昂（如《将进酒》）语速加快，形成推动力；沉思、缅怀（如《背影》）语速放缓，营造滞留感。
+
+<p>4. 气息控制（动力的源泉）
+<p>◇ 腹式呼吸： 适合深沉、宏大的情感（如《黄河颂》），气息深沉有力，声音有爆发力。
+<p>◇ 胸式呼吸： 适合细腻、温柔的情感（如《我愿意是急流》），气息轻柔绵长，带有“倾诉感”。</p>
+	  
+    </div>
+  </div>
+
+  <!-- 底部横栏 -->
+  <img class="footer-banner" src="https://via.placeholder.com/1200x150?text=底部横栏" alt="底部横栏">
+
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>

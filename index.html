@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揽漫天金霞 ——退休后的继续教育学习</title>
+    <style>
+        /* --- 全局样式设置 (适老化设计) --- */
+        :root {
+            --primary-color: #8B4513; /* 深褐色 - 稳重 */
+            --accent-color: #DAA520; /* 金麒麟色 - 呼应金晖 */
+            --bg-color: #FDFBF7; /* 米白色 - 护眼背景 */
+            --text-color: #333333; /* 深灰 - 清晰易读 */
+            --card-bg: #FFFFFF;
+            --font-size-base: 16px; /* 基础字号加大 */
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--bg-color);
+			/*----添加背景图案-----*/
+			/* background-image: url('p/bg-texture957485682.jpg'); */
+			/* 添加这行 */
+			background-blend-mode: overlay; /* 让纹理和颜色融合 */
+			color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+            font-size: var(--font-size-base);
+        }
+
+        /* --- 头部导航 --- */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        nav {
+            background-color: #5D2E0C;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background: none;
+            border: 2px solid transparent;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        nav button:hover, nav button.active {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 主要内容区域 --- */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            min-height: 60vh;
+        }
+
+        .page-section {
+            display: none; /* 默认隐藏所有页面 */
+            animation: fadeIn 0.5s;
+        }
+
+        .page-section.active {
+            display: block; /* 激活时显示 */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- 首页特有样式 --- */
+        .hero-banner {
+            background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+			    /* 添加图片背景 */
+    /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('p/hero-banner957485674.jpg'); */
+   background-size: cover;
+    background-position: center;
+	/*---以下两行设定div高度，以适应插入背景图片---*/
+	/* width:100%; */
+	/* height:600px; */
+            padding: 4px;
+            border-radius: 15px;
+            text-align: center;
+            color: #4a3b00;
+            margin-bottom: 30px;
+            border: 2px solid var(--accent-color);
+			color: #684e05; /* 确保文字在深色背景上可见 */
+        }
+
+        .hero-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+		/* 自行增加了一个字号h6提供给主页说明框使用，原有的h2太大造成手机界面一行放不下， */
+		/* 使用了em和rem字号单位，em为原局部的基本字号一个大小，rem以整体系统的字号为标准 */
+        .hero-banner h6 {
+            font-size: 1.65rem;
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+/* 以下三段为picture的css代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+        /* --- 子页面通用布局 --- */
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            background: #eee;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .sub-nav button {
+            background: #fff;
+            border: 1px solid #ccc;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .sub-nav button.active-tab {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        .content-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: none; /* 子栏目默认隐藏 */
+        }
+        
+        .content-box.active-tab-content {
+            display: block;
+        }
+
+         .resource-list {
+            list-style: none;
+            padding-left: 0;
+        }
+		
+        /* 设置li列表中的图标样式。以下五段样式，加入统一显示li列表中自己另行添加的图片图标24.gjf */
+        
+        .resource-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .resource-list li:before {
+            content: ''; /* 必须有content属性才能显示伪元素 */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-image: url('p/24.gif');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        /* 修改实际使用时的gif路径 */
+        .resource-list-alt {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .resource-list-alt li {
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .resource-list-alt li::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-image: url('p/24.gif');
+            background-repeat: no-repeat;
+            background-size: 16px 16px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .ai-badge {
+            background-color: #e0f7fa;
+            color: #006064;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* --- 页脚 --- */
+        footer {
+            background-color: #99482e;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* --- 响应式调整 --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            nav button { font-size: 1rem; padding: 5px 10px; }
+            .cards-container { grid-template-columns: 1fr; }
+        }
+		
+		  /* 以下为添加li列表中的图标文件，后改为li样式统一解决 */
+		  
+.search-icon {
+    background-image: url('p/24.gif'); /* 替换为实际路径 */
+    background-repeat: no-repeat;
+    background-position: left center; /* 图标靠左居中 */
+    background-size: 10px 10px; /* 调整图标大小 */
+    padding-left: 20px; /* 为图标留出空间 */
+}		
+		
+    </style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bed782faaf1761bf6df295a7adaa1daf";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	
+	
+	
+</head>
+<body>
+
+    <!-- 头部 -->
+  <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+	  
+	  
+	  <header>
+        <div class="subtitle">揽漫天金晖 | 摄录影像 · 合唱音乐 · 诵读诗书</div>
+    </header>
+
+    <!-- 主导航 -->
+    <nav>
+        <ul>
+            <li><button onclick="showPage('home')" class="active" id="btn-home">首页</button></li>
+            <li><button onclick="showPage('photo')" id="btn-photo">&#128247; 摄影/摄录影像</button></li>
+            <li><button onclick="showPage('music')" id="btn-music">&#127925; 歌唱/合唱音乐</button></li>
+            <li><button onclick="showPage('poetry')" id="btn-poetry">&#128220; 朗诵/诵读诗书</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- === 首页 === -->
+        <section id="home" class="page-section active">
+			   <!-- 插入主页面主题图 -->
+    
+	
+<!-- ===== 开始：外部数据驱动的轮播图 ===== -->
+<link rel="preload" href="slideshow_data.js" as="script"> <!-- 预加载数据文件 -->
+
+<style>
+/* 轮播图相关样式 */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 20px; /* 居中并设置底部边距 */
+    overflow: hidden; /* 确保图片不会溢出容器 */
+    border-radius: 10px;
+}
+
+.slide {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; /* 使用绝对定位避免占用空间 */
+    width: 100%;
+    height: auto; /* 高度自适应 */
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease; /* 添加淡入淡出过渡效果 */
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* 保持图片宽高比 */
+    display: block;
+    object-fit: cover; /* 可选：如果想填充整个区域但可能裁剪边缘，则使用 cover */
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative; /* 激活的幻灯片使用相对定位，确保其内容（caption）正常显示 */
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    padding: 10px 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; /* 分别对齐左右两边 */
+    align-items: center;
+}
+
+.slide-title {
+    margin: 0;
+    flex-grow: 1; /* 标题占据剩余空间 */
+}
+
+.dots-container {
+    display: inline-block; /* 让点状指示器成行显示 */
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;  /* 将点状指示器从15缩小为12 */
+    width: 12px;  /* 将点状指示器从15缩小为12 */
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: var(--accent-color, #DAA520); /* 使用CSS变量，若未定义则用默认值 */
+}
+
+/* 左右箭头 */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10; /* 确保箭头在图片上方 */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 响应式：在小屏幕上调整箭头大小 */
+@media (max-width: 768px) {
+    .prev, .next {
+        padding: 10px; /* 缩小箭头 */
+        font-size: 16px;
+    }
+    .slide-caption {
+        font-size: 14px; /* 缩小说明文字 */
+        padding: 8px 10px;
+    }
+}
+</style>
+
+<div class="slideshow-container" id="slideshowContainer">
+  <!-- 幻灯片和控制按钮将通过JavaScript动态生成 -->
+</div>
+
+<script src="slideshow_data.js"></script> <!-- 引入数据文件 -->
+<script>
+// --- 轮播图逻辑 ---
+let slideIndex = 1;
+let slideInterval; // 用于存储自动轮播的定时器ID
+
+// 检查数据是否加载成功
+if (typeof SLIDESHOW_DATA === 'undefined' || !Array.isArray(SLIDESHOW_DATA) || SLIDESHOW_DATA.length === 0) {
+    console.error("轮播图数据加载失败或为空！");
+    document.getElementById('slideshowContainer').innerHTML = '<p style="text-align:center; color:red;">轮播图数据加载失败，请稍后重试。</p>';
+    // 可以在这里添加一个备用的静态提示或隐藏容器
+    document.getElementById('slideshowContainer').style.display = 'none';
+    // 阻止后续脚本执行
+    throw new Error("SLIDESHOW_DATA not found!");
+}
+
+// 动态生成轮播HTML结构
+function generateSlideshowHTML(data) {
+    const container = document.getElementById('slideshowContainer');
+    let slidesHTML = '';
+    let dotsHTML = '';
+
+    data.forEach((item, index) => {
+        const isActive = index === 0 ? ' active' : ''; // 第一项设为激活
+        const isDotActive = index === 0 ? ' active' : ''; // 第一个点设为激活
+
+        slidesHTML += `
+        <div class="slide${isActive}">
+            <img src="${item.image}" alt="${item.alt}" loading="lazy">
+            <div class="slide-caption">
+                <div class="slide-title">${item.title}</div>
+                <div class="dots-container">
+                    ${data.map((_, i) => `<span class="dot${i === index ? isDotActive : ''}" onclick="currentSlide(${i + 1})"></span>`).join('')}
+                </div>
+            </div>
+        </div>`;
+    });
+
+    // 生成左右箭头
+    const controlsHTML = `
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    `;
+
+    container.innerHTML = slidesHTML + controlsHTML;
+}
+
+// 初始化轮播图
+generateSlideshowHTML(SLIDESHOW_DATA);
+showSlides(slideIndex); // 显示第一张
+
+// 启动自动轮播 (每3秒切换一次)
+startAutoSlide();
+
+// 鼠标悬停时暂停自动轮播，离开时恢复
+document.getElementById('slideshowContainer').addEventListener('mouseenter', stopAutoSlide);
+document.getElementById('slideshowContainer').addEventListener('mouseleave', startAutoSlide);
+
+function plusSlides(n) {
+  clearInterval(slideInterval); // 切换时暂停自动轮播
+  showSlides(slideIndex += n);
+  startAutoSlide(); // 切换后重新启动
+}
+
+function currentSlide(n) {
+  clearInterval(slideInterval); // 点击指示器时暂停自动轮播
+  showSlides(slideIndex = n);
+  startAutoSlide(); // 点击后重新启动
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.querySelectorAll(".slide"); // 使用 querySelectorAll
+  const dots = document.querySelectorAll(".dot"); // 使用 querySelectorAll
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  // 隐藏所有幻灯片
+  slides.forEach(slide => slide.classList.remove('active'));
+  // 移除所有指示器的激活状态
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  // 显示目标幻灯片
+  slides[slideIndex - 1].classList.add('active');
+  // 激活目标指示器
+  dots[slideIndex - 1].classList.add('active');
+}
+
+function startAutoSlide() {
+    slideInterval = setInterval(() => {
+        plusSlides(1);
+    }, 4000); // 4000毫秒 = 4秒 从3秒更改为4秒
+}
+
+function stopAutoSlide() {
+    clearInterval(slideInterval);
+}
+</script>
+<!-- ===== 结束：外部数据驱动的轮播图 ===== -->
+            <div class="hero-banner">
+        <!-- 插入一空行，确定以下字段在div（图片框）中的高度 -->
+               <h6>莫道桑榆晚，为霞尚满天</h6>
+        <!-- 在<p>中对一下字段的行高，左对齐和页边距进行设定 -->
+                <p style="line-height: 1.5; margin: 20px; padding: 20px; text-align: left;">　　“活到老，学到老”，在中国有深厚的文化传统，源远流长。古代先贤孔子自述“发愤忘食，乐以忘忧，不知老之将至”、“学而不已，阖棺乃止”（《论语·泰伯》），荀子明确提出“学不可以已”（《劝学》）、“学至乎没而后止也”。古希腊著名政治家和诗人梭伦和18世纪法国启蒙思想家卢梭等对此也多有论述。1957年，周恩来总理在全国会议上提出“活到老，学到老，改造到老”著名论断，在中国社会产生了深远影响。在科技飞速发展，人工智能、大数据等新科技不断涌现的今天，“活到老，学到老”理念被赋予新的更为深刻的意义，持续学习成为每个人应对时代变革的“必修课”。终身学习不仅是为谋生，更是充实内心世界，满足精神需求的现代生活方式。“活到老，学到老，老有所为”是中华优秀传统文化中积极老龄观的集中体现。</p>
+                <p style="margin-top:20px; font-weight:bold;">&#128071; 请选择您有兴趣了解的学习板块 &#128071;</p>
+            </div>
+
+            <div class="cards-container">
+                <!-- 摄影卡片 -->
+                <div class="course-card" onclick="showPage('photo')">
+                    <img src="pt/15584191y.gif" >
+                    <div class="card-title">光影·定格美好</div>
+                    <p>摄影与短视频学习</p>
+                    <p style="color:#666; font-size:0.9rem;">包含：构图技巧、后期修图、AI扩图教程</p>
+                </div>
+                <!-- 合唱卡片 -->
+                <div class="course-card" onclick="showPage('music')">
+                    <img src="pt/17695805xx.gif" >
+                    <div class="card-title">歌声·岁月共鸣</div>
+                    <p>合唱与音乐学习</p>
+                    <p style="color:#666; font-size:0.9rem;">包含：乐理知识、分声部练习、AI伴奏生成</p>
+                </div>
+                <!-- 朗诵卡片 -->
+                <div class="course-card" onclick="showPage('poetry')">
+                    <img src="pt/16768510xx.gif" >
+                    <div class="card-title">诗诵·心灵回响</div>
+                    <p>朗诵与诗词学习</p>
+                    <p style="color:#666; font-size:0.9rem;">包含：发声技巧、经典篇目、AI情感分析</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; background: #fff; padding: 20px; border-radius: 10px;">
+                <h3>&#128226; 最新动态</h3>
+                <ul class="resource-list">
+                    <li>2026-03-15：<a href="w/m26040803.html">参加摄影班《春到雨山湖》采风活动 </a></li>
+                    <li>2026-03-12：合唱班春晚新歌《立春》排练视频。</li>
+                    <li>2026-03-08：适合老年人的几款AI修图工具，在“智慧助手”栏目可见。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 摄影子站 === -->
+        <section id="photo" class="page-section">
+		   <!-- 插入摄影主题图 -->
+    <img src="p/20160407cf-01t.jpg" alt="摄影主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128247; 光影·定格美好</h2>
+            
+            <div class="sub-nav">
+                <button onclick="showTab('photo', 'tab1')" class="active-tab">&#128218; 摄影基础</button>
+                <button onclick="showTab('photo', 'tab2')">&#9997;&#65039; 习作园地</button>
+                <button onclick="showTab('photo', 'tab3')">&#128444;&#65039; 佳作赏析</button>
+                <button onclick="showTab('photo', 'tab4')">&#129302; AI智慧助手</button>
+            </div>
+
+            <div id="photo-tab1" class="content-box active-tab-content">
+                <h3>学习摄影基础知识</h3>
+                <ul class="resource-list">
+                    <li><strong>要点：</strong> <a href="w/m26041201.html">手机摄影要注意的四个核心问题 </a></li>
+                    <li><strong>要点：</strong> <a href="w/m26041202.html">构图的艺术：三分法与引导线 </a></li>
+                    <li><strong>要点：</strong> 手机摄影的人像模式技巧</li>
+                </ul>
+            </div>
+
+            <div id="photo-tab2" class="content-box">
+                <h3>我的作业练习</h3>
+                <p>这里展示摄影作业，记录进步过程。</p>
+                <div style="background:#f9f9f9; padding:15px; border:1px dashed #ccc;">
+                    <p><strong>作业回顾：</strong> <a href="w/m26040702.html">原原和曼曼</a></p>
+                    <p><strong>拍摄时间：</strong> 2016年3月10日</p>
+                    <p><em>(此处可插入您的照片占位符)</em></p>
+                    <button style="padding:5px 10px; background:var(--primary-color); color:white; border:none; border-radius:3px; cursor:pointer;">查看大图</button>
+                </div>
+            </div>
+
+            <div id="photo-tab3" class="content-box">
+                <h3>佳作赏析</h3>
+                <p>收集大师名作和班级同学作业交流共同学习。</p>
+                <ul class="resource-list-alt">
+                    <li> <a href="https://www.meipian.cn/5l073d7t?first_share_to=group_singlemessage&share_depth=1&first_share_uid=19898221">摄影旅游：赣粤闽六日行之一 —赣州（万重山外）</a></li>
+                    <li>摄影作品：<a href="http://360vr.artnchina.com/vr3d/8cbjtssfea6/">第三十届全国摄影艺术展览</a></li>
+                    <li>名家赏析：<a href="w/m26041401.html">布列松的“决定性瞬间”理论解读。</a></li>
+                </ul>
+            </div>
+
+            <div id="photo-tab4" class="content-box">
+                <h3>&#129302; AI 摄影工具箱</h3>
+                <p>科技让摄影更简单！以下是几个适合老年人的AI工具：</p>
+                <ul class="resource-list">
+                    <li><strong>AI 一键消除路人：</strong> 拍照时背景有人？用这个工具自动抹除。</li>
+                    <li><strong>老照片修复：</strong> 模糊的家庭旧照，AI可以变清晰并上色。</li>
+                    <li><strong>智能配文：</strong> 不知道照片发朋友圈写什么？AI帮您写诗意文案。</li>
+                </ul>
+                <button style="padding:10px 20px; background:#008CBA; color:white; border:none; border-radius:5px; cursor:pointer;">打开在线AI修图演示</button>
+            </div>
+        </section>
+
+        <!-- === 合唱子站 === -->
+	
+        <section id="music" class="page-section">
+			<!-- 插入音乐主题图 -->
+    <img src="p/20240628111647a.jpg" alt="音乐主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#127925; 歌声·岁月共鸣</h2>
+            
+            <div class="sub-nav">
+                <button onclick="showTab('music', 'tab1')" class="active-tab">&#128218; 声乐基础</button>
+                <button onclick="showTab('music', 'tab2')">&#9997;&#65039; 排练演出</button>
+                <button onclick="showTab('music', 'tab3')">&#127911; 佳作赏析</button>
+                <button onclick="showTab('music', 'tab4')">&#129302; AI智慧助手</button>
+            </div>
+
+            <div id="music-tab1" class="content-box active-tab-content">
+                <h3>乐理与声乐资料</h3>
+                <ul class="resource-list">
+                    <li><strong>简谱基础知识：</strong> <a href="w/m26040902.html">怎么看拍号和调号？</a></li>
+                    <li><strong>发声练习：</strong> 腹式呼吸法视频教程。</li>
+                    <li><strong>本学期曲目：</strong> 《立春》、《故乡的云》乐谱。</li>
+                </ul>
+            </div>
+
+            <div id="music-tab2" class="content-box">
+                <h3>排练演出/视频</h3>
+                <p>记录每次排练的声音，对比发现不足。</p>
+                <ul class="resource-list">
+                    <li>&#127908; 《安工大校歌》演唱录音</li>
+                    <li>&#127908; 合唱《祖国不会忘记》录像</li>
+                </ul>
+            </div>
+
+            <div id="music-tab3" class="content-box">
+                <h3>名家演唱赏析</h3>
+                <p>聆听著名合唱团的演出，提升艺术鉴赏力。</p>
+                <ul class="resource-list">
+                    <li>中央乐团《黄河大合唱》经典片段解析。</li>
+                    <li>维也纳童声合唱团的音色特点分析。</li>
+                </ul>
+            </div>
+
+            <div id="music-tab4" class="content-box">
+                <h3>&#129302; AI 音乐工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 定调助手：</strong> 觉得歌太高唱不上去？输入歌曲名，AI推荐适合老人的调。</li>
+                    <li><strong>智能伴奏生成：</strong> 只有旋律没有伴奏？AI自动生成钢琴或乐队伴奏。</li>
+                    <li><strong>音准矫正练习：</strong> 跟着AI钢琴练耳，实时反馈音准。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 朗诵子站 === -->
+        <section id="poetry" class="page-section">
+			<!-- 插入朗诵主题图 -->
+    <img src="p/20210625214355-t2.jpg" alt="朗诵主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 诗诵·心灵回响</h2>
+            
+            <div class="sub-nav">
+                <button onclick="showTab('poetry', 'tab1')" class="active-tab">&#128218; 参阅资料</button>
+                <button onclick="showTab('poetry', 'tab2')">&#9997;&#65039; 习作园地</button>
+                <button onclick="showTab('poetry', 'tab3')">&#127897;&#65039; 佳作赏析</button>
+                <button onclick="showTab('poetry', 'tab4')">&#129302; AI智慧助手</button>
+            </div>
+
+            <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>朗诵技巧与文稿</h3>
+                <ul class="resource-list">
+                    <li><strong>气息控制：</strong> <a href="w/m26040602.html">如何把握作品情感与基调？</a></li>
+                    <li><strong>情感表达：</strong> <a href="w/m26040701.html">如何处理停顿与重音？</a></li>
+                    <li><strong>本周篇目：</strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9"> 《四声歌》朗诵练习注音版。</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="http://www.wmdjy.top/ls/lsd.php">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> 输入文章，AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析您的情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 手机摄像头对着自己，屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+	<img src="p/3ba66c531f01b84a9fd0-y.jpg" alt="页脚" style="width:80%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+        <p>版权所有 &copy; 2026 金晖天地 | 设计：Dawn25</p>
+        <p>愿我们永远年轻，永远心有梦想。</p>
+    </footer>
+
+    <script>
+// 切换主页面函数
+function showPage(pageId) {
+    // 隐藏所有页面
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // 取消所有导航按钮激活状态
+    const navButtons = document.querySelectorAll('nav button');
+    navButtons.forEach(btn => btn.classList.remove('active'));
+
+    // 显示目标页面
+    document.getElementById(pageId).classList.add('active');
+    
+    // 激活对应导航按钮
+    const activeBtn = document.getElementById('btn-' + pageId);
+    if(activeBtn) activeBtn.classList.add('active');
+
+    // 滚动到顶部
+    window.scrollTo(0, 0);
+
+    // --- 新增：向浏览器历史记录添加状态 ---
+    // 创建一个状态对象，可以包含任意数据，这里用 pageId 作为标识
+    const stateObj = { page: pageId };
+    // 使用 pushState 更新浏览器 URL 和历史记录
+    // 参数：stateObject, title (通常可以为 null), url (相对路径)
+    history.pushState(stateObj, null, '#' + pageId);
+}
+
+// 切换子栏目函数 (如：课堂讲义 -> 习作园地)
+function showTab(parentId, tabName) {
+    // 找到当前父容器下的所有内容块
+    const parentSection = document.getElementById(parentId);
+    const contents = parentSection.querySelectorAll('.content-box');
+    
+    // 隐藏该内容块下的所有子栏目
+    contents.forEach(content => content.classList.remove('active-tab-content'));
+
+    // 找到当前父容器下的所有子导航按钮
+    const buttons = parentSection.querySelectorAll('.sub-nav button');
+    buttons.forEach(btn => btn.classList.remove('active-tab'));
+
+    // 显示目标子栏目
+    document.getElementById(parentId + '-' + tabName).classList.add('active-tab-content');
+
+    // 激活被点击的按钮
+    // 注意：这里 event.target 是正确的，因为我们是在 onclick 事件处理器中
+    event.target.classList.add('active-tab');
+
+    // --- 新增：向浏览器历史记录添加状态 (子模块) ---
+    const stateObj = { page: parentId, tab: tabName };
+    history.pushState(stateObj, null, '#' + parentId + '-' + tabName);
+}
+
+
+// --- 新增：监听浏览器的 popstate 事件 ---
+// 当用户点击前进/后退按钮时触发
+window.addEventListener('popstate', function(event) {
+    // event.state 包含了 pushState 时传入的状态对象
+    if (event.state && event.state.page) {
+        const targetPage = event.state.page;
+        const targetTab = event.state.tab; // 可能为 undefined
+
+        // 如果有子标签页信息，优先恢复子标签页
+        if (targetTab) {
+            // 首先确保父页面是激活的
+            showPage(targetPage); 
+            // 然后延迟一点时间再切换到指定子标签页，确保父页面已加载
+            setTimeout(() => {
+                 // 模拟点击对应的子标签按钮来切换内容
+                 const subNavButtons = document.querySelectorAll(`#${targetPage} .sub-nav button`);
+                 subNavButtons.forEach(btn => {
+                     // 查找按钮的 onclick 属性，看它是否调用 showTab 且参数匹配
+                     const onclickStr = btn.getAttribute('onclick');
+                     if (onclickStr && onclickStr.includes(`'${targetTab}'`)) {
+                         // 手动触发 showTab 逻辑，但不调用 pushState (避免循环)
+                         // 更简洁的方式是直接调用 showSlides 逻辑，但为了复用，我们模拟点击
+                         // 实际上，直接操作 DOM 状态更可靠
+                         const contents = document.querySelectorAll(`#${targetPage} .content-box`);
+                         const buttons = document.querySelectorAll(`#${targetPage} .sub-nav button`);
+                         // 重置
+                         contents.forEach(content => content.classList.remove('active-tab-content'));
+                         buttons.forEach(btn => btn.classList.remove('active-tab'));
+                         // 激活
+                         document.getElementById(`${targetPage}-${targetTab}`).classList.add('active-tab-content');
+                         btn.classList.add('active-tab'); // 激活对应的按钮
+                         return; // 找到后退出循环
+                     }
+                 });
+            }, 0); // 使用 0 延迟确保 showPage 完全执行后再操作子标签
+            
+        } else {
+            // 如果没有子标签页信息，只恢复主页面
+            showPage(targetPage);
+        }
+        
+    } else {
+        // 如果 state 为空，可能回到了初始状态或无效状态，可以重定向到首页
+        // 或者什么都不做，保持当前状态
+        // showPage('home'); // 如果你想默认回到首页，取消此行注释
+    }
+});
+
+// --- 新增：页面加载时根据 URL Hash 初始化状态 ---
+// 当页面首次加载或刷新时，根据 URL 的 hash 部分 (#home, #photo-tab1 等) 来恢复状态
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.substring(1); // 移除开头的 '#'
+    if (hash) {
+        // 检查是否包含子标签页标识 (例如 photo-tab1)
+        const parts = hash.split('-');
+        if (parts.length === 2) {
+            const page = parts[0];
+            const tab = parts[1];
+            // 确保主页面存在且被激活
+            if (document.getElementById(page)) {
+                showPage(page);
+                // 延迟切换子标签页
+                setTimeout(() => {
+                    // 检查子标签页是否存在
+                    if (document.getElementById(`${page}-${tab}`)) {
+                        // 直接操作 DOM 恢复子标签页状态
+                        const contents = document.querySelectorAll(`#${page} .content-box`);
+                        const buttons = document.querySelectorAll(`#${page} .sub-nav button`);
+                        // 重置
+                        contents.forEach(content => content.classList.remove('active-tab-content'));
+                        buttons.forEach(btn => btn.classList.remove('active-tab'));
+                        // 激活
+                        document.getElementById(`${page}-${tab}`).classList.add('active-tab-content');
+                        // 找到并激活对应的按钮
+                        buttons.forEach(btn => {
+                            const onclickStr = btn.getAttribute('onclick');
+                            if (onclickStr && onclickStr.includes(`'${tab}'`)) {
+                                btn.classList.add('active-tab');
+                            }
+                        });
+                        
+                        // 滚动到顶部
+                        window.scrollTo(0, 0);
+                    }
+                }, 0);
+            }
+        } else {
+            // 如果 hash 只包含主页面 (例如 home, photo)
+            if (document.getElementById(hash)) {
+                showPage(hash);
+            }
+        }
+    }
+    // 如果没有 hash，默认显示首页 (如果需要的话)
+    // if (!window.location.hash && !document.querySelector('.page-section.active')) {
+    //     showPage('home');
+    // }
+});
+    </script>
+</body>
+</html>

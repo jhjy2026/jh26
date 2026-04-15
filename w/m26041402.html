@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;           /* 让图片变成块级元素，才能用 margin auto 居中 */
+  margin-left: auto;        /* 左边距自动 */
+  margin-right: auto;       /* 右边距自动 */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 图片容器：居中显示 */
+.article-body figure {
+  max-width: 100%;
+  margin: 20px auto;        /* 上下留白，左右自动居中 */
+  text-align: center;       /* 内部元素居中（包括 figcaption） */
+}
+
+/* 图片本身 */
+.article-body figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;           /* 图片自身居中（可选，因为父元素已居中） */
+}
+
+/* 图片说明文字 */
+.article-body figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;       /* 说明文字居中 */
+}
+
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+  <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">布列松的“决定性瞬间”理论解读</h1>
+    <p class="article-meta">学习笔记 &nbsp;|&nbsp; 2026-04-08</p>
+    
+    <div class="article-body">
+      <p>利·卡蒂埃-布列松（Henri Cartier-Bresson）提出的“决定性瞬间”（The Decisive 
+		Moment）是现代摄影史上最具影响力的美学理论之一，它不仅是一种拍摄技巧，更是一种观察世界和表达思想的方式。</p>
+		<p><font color="#0000FF"><b>理论核心：形式与内容的完美统一</b></font></p>
+		<p>
+		“决定性瞬间”理论的核心，是指在事件发展的过程中，存在一个转瞬即逝的特定时刻。在这一刻，场景中的所有视觉元素（人、物、光影、构图）会恰好排列成最具意义的几何形态，同时这个形态又能最完美地揭示事件的本质和内涵。</p>
+		<p>
+		布列松在1952年出版的摄影集《决定性瞬间》（法文原名《抓拍的影像》）中对此进行了阐述，他认为摄影就是“在几分之一秒内，同时记录一个事件的内涵及其表现形式”。这不仅仅是抓取一个动作的高潮，更是意义、构图与时机三者在瞬间的完美结合。</p>
+		<p><font color="#0000FF"><b>实践方法：抓拍与直觉</b></font></p>
+		<p>为了实现“决定性瞬间”，布列松发展出了一套独特的实践方法，其核心是抓拍。</p>
+		<p>对摆拍：他坚信现实本身就能讲述最好的故事，因此坚决反对任何形式的人工安排或导演。他认为经过加工的照片没有意义。</p>
+		<p>
+		“隐形”的观察者：为了捕捉最自然、最真实的瞬间，布列松力求让自己“隐形”。他常常用黑胶带包裹相机的金属部件以防反光，并依靠直觉和敏捷的反应，在不干扰被摄对象的情况下完成拍摄。</p>
+		<p>
+		极简的装备：他几乎只使用一台轻便的35毫米徕卡（Leica）相机和一支50毫米标准镜头。这种极简的配置让他行动自由，能够快速响应，将相机视为“眼睛的延伸”。</p>
+		<p>
+		构图与光线：他坚持只使用现场光，对使用闪光灯，并且从不裁剪自己的照片。他认为构图应该在取景器中一次性完成，这要求摄影师具备极高的预见性和严谨的构图能力。</p>
+		<p>&nbsp;<b><font color="#0000FF">哲学内涵：一种“观世之道”</font></b></p>
+		<p>“决定性瞬间”远不止是一种摄影技巧，它更是一种深刻的哲学观和世界观。</p>
+		<p>
+		赋予世界意义：对布列松而言，摄影是记录他所见所感的“素描本”，是一种直觉和发的工具。通过抓取决定性瞬间，摄影师将自己的情感、思考和理解融入到画面中，从而赋予客观世界以主观的意义。</p>
+		<p>
+		人文关怀：他认为，无论一幅照片技术多么完美，如果它远离了对人类的爱、理解和命运的认知，不算成功。他的作品始终关注普通人，从平凡的日常中发现美与诗意，体现了深刻的人文关怀。</p>
+		<p>瞬间即永恒：这一理论的本质，是通过摄影师敏锐的眼睛和果断的决策，将流动现实中稍纵即逝的完美一刻凝固下来，使其成为永恒。</p>
+		<p>
+		总而言之，决定性瞬间”理论要求摄影师同时具备画家的构图眼光、猎人的耐心等待和哲学家的深刻思考，在电光石火的一刹那，完成对现实世界的诗意提炼。</p>
+		<p></p>
+  
+      
+	    <figure>
+    <img src="../p/2026/20260414104327.jpg" alt="配图1">
+    <figcaption>利·卡蒂埃-布列松</figcaption>
+  </figure>
+	  
+	  
+      </div>
+  </div>
+
+  <!-- 底部横栏 -->
+  
+
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>
