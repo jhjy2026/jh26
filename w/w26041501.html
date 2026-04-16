@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+ /* 为让图文中的图片居中显示，作以下调整增加 */
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;           /* 让图片变成块级元素，才能用 margin auto 居中 */
+  margin-left: auto;        /* 左边距自动 */
+  margin-right: auto;       /* 右边距自动 */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+
+ /* 为增加图片下方文字说明，建立图片容器 */	
+	/* 图片容器：居中显示 */
+.article-body figure {
+  max-width: 100%;
+  margin: 20px auto;        /* 上下留白，左右自动居中 */
+  text-align: center;       /* 内部元素居中（包括 figcaption） */
+}
+
+/* 图片本身 */
+.article-body figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;           /* 图片自身居中（可选，因为父元素已居中） */
+}
+
+/* 图片说明文字 */
+.article-body figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;       /* 说明文字居中 */
+}
+
+/* 以下三段为picture的css代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+  <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">歌唱者如何练习腹式呼吸法</h1>
+    <p class="article-meta">学习笔记 &nbsp;|&nbsp; 发布日期：2026-04-08</p>
+    
+<div class="article-body">
+  <p>腹式呼吸是歌唱的核心技巧，它能帮助你稳定气息、保护声带并提升音质。歌唱者想要掌握腹式呼吸法，需深入理解其核心机制并通过系统训练实现肌肉记忆与身体协调。具体练习方法如下：</p>
+  <p><strong> 一、基础认知：腹式呼吸的核心原理</strong></p>
+  <p>
+生理机制：腹式呼吸以横膈膜下降带动腹部隆起，吸气时肺部充分扩张，呼气时依靠腹肌收缩控制气息流动。相较于胸式呼吸，腹式呼吸能吸入更多空气，为长乐句提供稳定动力。</p><p>
+适用场景：适合演唱抒情慢歌或需要深沉气息支撑的段落，但在快速换气或高强度发声时需结合胸腹式联合呼吸。</p>
+<p><strong> 二、关键练习技巧</strong></p>
+<p>
+正确“收小腹”的发力方式</p><p>
+误区纠正：避免将小腹横向瘪下去，这会导致气息堵塞胸口。正确方法是想象小腹内“抓住一个拳头”，通过纵向收紧形成支点，同时保持腰部两侧膨胀感。</p><p>
+动态感知：平躺时将手放在腹部，吸气时感受腹部自然隆起（而非胸部起伏），呼气时缓慢收缩腹部，体会气息均匀流出。</p><p>
+借助日常行为模拟呼吸节奏</p><p>
+咳嗽练习：短促连续的轻声咳嗽（如“咳、咳、咳”），瞬间感受小腹爆发力与横膈膜对抗，这种断音训练可强化气息控制。</p><p>
+惊讶反应：模仿“吓一跳”时的倒吸气动作，快速扩张腰腹并保持住，再缓慢呼出，体会急吸缓呼的节奏转换。</p><p>
+维持吸气状态的气息对抗</p><p>
+吹灰法：深吸气后像吹灭蜡烛般匀速吐气，全程保持肋骨架扩张，防止肩膀耸起。</p><p>
+哈气练习：张嘴发“哈——”声，要求声音平稳连贯且无颤音，重点感受横膈膜与腹肌的持续对抗。</p>
+<p><strong> 三、进阶训练方法</strong></p>
+<p>
+无声练习建立肌肉记忆</p><p>
+腔体打开练习：抬头张嘴鼻吸，想象花香渗入丹田，双手叉腰感受两侧肋骨外扩，保持5秒后慢呼气。</p><p>
+快速喘气训练：伸舌快速重复“哈哈”声，仅靠腹部收缩驱动气息，强化横膈膜弹性与腹肌耐力。</p><p>
+有声练习融合呼吸与发声</p><p>
+气泡音按摩：放松喉部，用气息弹出连续“啵啵”声，从低音渐升至高音，确保每个音都落在气息支撑点上。</p><p>
+哼鸣传导：闭口哼唱旋律，鼻腔共鸣时想象气息穿过眉心，同时监测腹部是否始终紧绷。</p><p>
+体能强化提升呼吸效能</p><p>
+抗阻训练：仰卧起坐时配合呼吸节奏（起身呼气/躺下吸气），增强核心肌群对气息的控制力。</p><p>
+负重练习：睡前腹部压书数数，从薄书本逐步增加重量，强制深化横膈膜下沉幅度。</p><p>
+初期可能出现肩颈紧张或气息虚浮等问题，可通过对照镜子练习、录音自查等方式及时调整。</p><p>
+腹式呼吸需要持续练习才能形成肌肉记忆，建议每日坚持10-15分钟专项训练。若伴有嗓音问题，可咨询声乐教师进行个性化指导。</p>
+
+
+</div>
+  </div>
+
+  <!-- 底部横栏 -->
+ 
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>
