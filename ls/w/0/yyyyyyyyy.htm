@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>yyyyyyyyy</title>
+</head>
+
+<body>
+
+yyyyyyyyy
+
+<?php
+include 'qqwry.php';
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$qqwry = new QQwry('QQWry.Dat');
+$location = $qqwry->getLocation($ip);
+
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+preg_match('/(Windows|Macintosh|Linux)/', $userAgent, $os);
+$os = $os[1] ?? 'δ֪';
+
+$time = date("Y-m-d H:i:s");
+$id = uniqid();
+
+$filename = 'visitors_data.txt';
+$file = fopen($filename, "a");
+fwrite($file, "ID: $id, IP: $ip, Location: $location, OS: $os, Time: $time\n");
+fclose($file);
+
+header('Location: display_visitors.php');
+exit;
+?></body>
+
+</html>

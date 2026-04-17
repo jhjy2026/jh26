@@ -1,0 +1,20 @@
+vti_encoding:SR|utf8-nl
+vti_author:SR|DESKTOP-804PFAQ\\Administrator
+vti_modifiedby:SR|DESKTOP-804PFAQ\\Administrator
+vti_timelastmodified:TR|22 Dec 2025 23:45:24 -0000
+vti_timecreated:TR|22 Dec 2025 23:45:24 -0000
+vti_cacheddtm:TX|22 Dec 2025 23:45:24 -0000
+vti_filesize:IR|19622
+vti_cachedtitle:SR|视频攫影
+vti_cachedbodystyle:SR|<body topmargin="200" style="text-align:center" bgcolor="#F2FFEE">
+vti_cachedlinkinfo:VX|S|../p/20201116TT-02.jpg H|../ H|zg.php H|ug.php H|uy.php H|uu.php H|ai.php H|zx.php S|../y/p/2014020120591471733615.jpg S|../y/p/ggdob-1.jpg S|../y/p/23.gif H|w20/w-20200805W.htm S|../y/p/23.gif H|w1801/w-20180221-02up.htm S|../y/p/23.gif H|w1801/w-20180221-01up.htm S|../y/p/23.gif H|w1801/w-20180215-06up.htm S|../y/p/23.gif H|w1801/w-20180215-07up.htm S|../y/p/23.gif H|w20/w-20200725W.htm S|../y/p/23.gif H|w20/w-2020904W.htm S|../y/p/23.gif H|w19/w-20190727.htm S|../y/p/23.gif H|w20/w-202018W.htm S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif S|../y/p/23.gif
+vti_cachedsvcrellinks:VX|NSUS|p/20201116TT-02.jpg DHUS| FHUS|w/zg.php FHUS|w/ug.php FHUS|w/uy.php FHUS|w/uu.php FHUS|w/ai.php FHUS|w/zx.php FSUS|y/p/2014020120591471733615.jpg FSUS|y/p/ggdob-1.jpg FSUS|y/p/23.gif NHUS|w/w20/w-20200805W.htm FSUS|y/p/23.gif NHUS|w/w1801/w-20180221-02up.htm FSUS|y/p/23.gif NHUS|w/w1801/w-20180221-01up.htm FSUS|y/p/23.gif NHUS|w/w1801/w-20180215-06up.htm FSUS|y/p/23.gif NHUS|w/w1801/w-20180215-07up.htm FSUS|y/p/23.gif NHUS|w/w20/w-20200725W.htm FSUS|y/p/23.gif NHUS|w/w20/w-2020904W.htm FSUS|y/p/23.gif NHUS|w/w19/w-20190727.htm FSUS|y/p/23.gif NHUS|w/w20/w-202018W.htm FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif FSUS|y/p/23.gif
+vti_cachedneedsrewrite:BR|false
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=utf-8
+vti_charset:SR|utf-8
+vti_title:SR|视频攫影
+vti_extenderversion:SR|6.0.2.6551
+vti_backlinkinfo:VX|
