@@ -380,6 +380,26 @@ document.write("星期"+ strweek);
  width="7" height="7"></td>
 						<td height="30" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" bgcolor="#BDFEA5" bordercolor="#000000">
 						<p style="margin-left: 10px">
+						<a style="text-decoration: none" href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">
+						《读中国》 朗诵：虹云</a></td>
+								<td width="38" bgcolor="#BDFEA5">&nbsp;</td>
+							</tr>
+							<tr>
+								<td height="30" width="44" align="center" bgcolor="#FFFFFF">
+				<img border="0" src="y/p/23.gif"
+ width="7" height="7"></td>
+						<td height="30" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" bgcolor="#BDFEA5" bordercolor="#000000">
+						<p style="margin-left: 10px">
+						<a style="text-decoration: none" href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">
+						《中国话》 朗诵：虹云</a></td>
+								<td width="38" bgcolor="#BDFEA5">&nbsp;</td>
+							</tr>
+							<tr>
+								<td height="30" width="44" align="center" bgcolor="#FFFFFF">
+				<img border="0" src="y/p/23.gif"
+ width="7" height="7"></td>
+						<td height="30" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" bgcolor="#BDFEA5" bordercolor="#000000">
+						<p style="margin-left: 10px">
 						<a style="text-decoration: none" href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GjBNJb.CFuz">
 						《将进酒》李白 京剧清唱</a></td>
 								<td width="38" bgcolor="#BDFEA5">&nbsp;</td>
@@ -399,12 +419,9 @@ document.write("星期"+ strweek);
 								<td width="38" bgcolor="#BDFEA5">&nbsp;</td>
 							</tr>
 							<tr>
-								<td height="30" width="44" align="center">&nbsp;</td>
-								<td bordercolor="#000000" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" bgcolor="#BDFEA5">&nbsp;</td>
-								<td width="38" bgcolor="#BDFEA5">&nbsp;</td>
-							</tr>
-							<tr>
-								<td height="30" width="44" align="center">&nbsp;</td>
+								<td height="30" width="44" align="center">
+				<img border="0" src="y/p/23.gif"
+ width="7" height="7"></td>
 								<td bordercolor="#000000" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" bgcolor="#BDFEA5">&nbsp;</td>
 								<td width="38" bgcolor="#BDFEA5">&nbsp;</td>
 							</tr>
@@ -603,6 +620,16 @@ document.write("星期"+ strweek);
 						<p style="margin-left: 10px">
 						<a style="text-decoration: none; " href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gqd84-.CkeS">
 						《满江红》（节选）</a></td>
+								<td width="38" bgcolor="#F4DDF3">&nbsp;</td>
+							</tr>
+							<tr>
+								<td height="30" width="44" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px" align="center" bgcolor="#FFFFFF">
+				<img border="0" src="y/p/23.gif"
+ width="7" height="7"></td>
+						<td height="30" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 1px" bgcolor="#F4DDF3" bordercolor="#000000">
+						<p style="margin-left: 10px">
+						<a style="text-decoration: none; " href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GybeR4.BibH">
+						《七律 长征》（朗诵习作）</a></td>
 								<td width="38" bgcolor="#F4DDF3">&nbsp;</td>
 							</tr>
 							<tr>
