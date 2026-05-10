@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+ /* 为让图文中的图片居中显示，作以下调整增加 */
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;           /* 让图片变成块级元素，才能用 margin auto 居中 */
+  margin-left: auto;        /* 左边距自动 */
+  margin-right: auto;       /* 右边距自动 */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  
+  /* 视频样式：自适应 + 居中 */
+.article-body figure video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background-color: #000;   /* 视频未播放时背景更干净 */
+}
+
+ /* 为增加图片下方文字说明，建立图片容器 */	
+	/* 图片容器：居中显示 */
+.article-body figure {
+  max-width: 100%;
+  margin: 20px auto;        /* 上下留白，左右自动居中 */
+  text-align: center;       /* 内部元素居中（包括 figcaption） */
+}
+
+/* 图片本身 */
+.article-body figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;           /* 图片自身居中（可选，因为父元素已居中） */
+}
+
+/* 图片说明文字 */
+.article-body figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;       /* 说明文字居中 */
+}
+
+/* 以下三段为picture的css代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+  <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">手机人像模式摄影的操作要点</h1>
+    <p class="article-meta">学习笔记 发布日期：2026-04-08</p>
+    
+<div class="article-body">
+  <p>手机人像模式的核心逻辑是利用算法模拟大光圈浅景深效果，通过虚化背景来突出人物主体。要拍出自然、专业的人像照片，可以重点关注以下几个要点：
+  <p><font color="#FF0000"><b>1. 焦段选择：告别广角畸变</b></font>
+  <p>尽量避免使用默认的 1x 主摄（广角）拍摄近景或半身人像，广角容易让人物脸部（尤其是鼻子）产生拉伸畸变，且背景虚化较弱。
+  <p>- 推荐焦段：优先使用 2x 或 3x 长焦镜头（等效全画幅约 50mm-85mm）。这个焦段接近人眼视角，面部比例自然，且空间压缩感更强，能带来更柔和的背景虚化效果。
+  <p>• 全身照：可用 2x 焦段，摄影师退后一步拍，既能保证全身入镜，也能规避广角变形。
+  <p><font color="#FF0000"><b>2. 距离把控：拉开层次差</b></font>
+  <p>人像模式的虚化算法高度依赖“景深”，即主体与背景的距离关系：
+  <p>• 人物与背景：尽量让人物离背景 2 米以上。距离越远，背景虚化越明显；若人紧贴墙根，背景很难被虚化，容易显得杂乱。
+  <p>- 手机与人物：一般保持在 0.5 - 2 米 之间（具体看手机支持的最近对焦距离）。太远会导致虚化效果失效，太近则可能无法对焦或产生畸变。
+  <p><b><font color="#FF0000">3. 虚化与光效：克制与自然</font></b>
+  <p>• 虚化强度（f值）：不要一味追求最强的虚化（如 f/1.4）。过强的虚化容易导致人物边缘出现“抠图感”或发丝虚化穿帮。f/2.8 - f/4.0 往往更接近光学镜头的自然虚化观感。好在多数手机支持后期在相册里重新调整虚化强度（景深控制），拍摄时可先拍到位。
+  <p>- 光效模式：可尝试系统内置的“摄影室光”（均匀提亮面部）、“轮廓光”（增强立体感）或“舞台光”（黑背景聚光）等，这些计算摄影功能能快速提升氛围感，且通常支持后期更改。
+  <p><font color="#FF0000"><b>4. 光线与构图：质感的关键
+  </b></font>
+  <p>- 黄金时刻：首选清晨或傍晚的柔和自然光，光线带暖调且不生硬；阴天其实是天然柔光箱，适合表现皮肤细节。
+  <p>• 逆光处理：拍逆光人像（如日落剪影）时，可点击屏幕人脸处对焦，并上滑小太阳图标适当过曝（+0.3 ~ +1.0 EV）提亮面部，或开启 HDR 平衡光比。
+  <p>- 简易补光：夜间或室内光线不足时，可用白色纸张、浅色墙面反光，或让人物面向光源（如窗户光），必要时开启手机手电筒补光。
+  <p>• 构图技巧：开启网格线，将人物眼睛放在九宫格交点上；尝试侧脸或回眸，比正襟危坐更生动；可适当留白，避免画面拥挤。
+  <p>5. 背景与边缘：避免算法翻车
+  <p>• 简洁背景：选择颜色统一、纹理不复杂的背景（如净墙、天空、水面），有助于算法精准识别人物边缘，减少“头发周围虚化晕开”的失误。
+  <p>• 前景虚化：可寻找树叶、栏杆、花朵等作为前景（距镜头10-20cm），对焦人物后，前景会形成朦胧光斑，极大增加画面的层次感和故事性。
+  <p>只要掌握好“长焦焦段 + 远近层次 + 适度虚化 + 好光线”，手机人像模式完全可以出片。</p>
+
+
+</div>
+  </div>
+
+  <!-- 底部横栏 -->
+ 
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>

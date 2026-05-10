@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>图文展示页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 基础重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #bfbfbf;
+    }
+
+    /* 顶部横栏题图 */
+    .header-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 导航栏 */
+    nav {
+      background-color: #8B4513;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+	        h4 {
+            margin-top: 2.2em;
+            font-size: 2rem;
+            letter-spacing: 2px;
+			text-align:center;
+			color: red;
+			}
+
+
+    /* 主内容区 */
+    .content {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0 35px;
+	  padding-top: 30px;
+	  padding-bottom: 200px;
+	  background-color: #f9f9f9;
+    }
+
+    .article-title {
+      font-size: 2.1em;
+      margin: 40px;
+	  color:red;
+	  text-align:center;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 40px;
+	  text-align:center;
+    }
+
+    .article-body p {
+line-height: 1.5; 
+margin: 0px; 
+text-indent: 2em;
+text-align: left;
+font-size: 1.2em;
+    }
+
+ /* 为让图文中的图片居中显示，作以下调整增加 */
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;           /* 让图片变成块级元素，才能用 margin auto 居中 */
+  margin-left: auto;        /* 左边距自动 */
+  margin-right: auto;       /* 右边距自动 */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  
+  /* 视频样式：自适应 + 居中 */
+.article-body figure video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background-color: #000;   /* 视频未播放时背景更干净 */
+}
+
+ /* 为增加图片下方文字说明，建立图片容器 */	
+	/* 图片容器：居中显示 */
+.article-body figure {
+  max-width: 100%;
+  margin: 20px auto;        /* 上下留白，左右自动居中 */
+  text-align: center;       /* 内部元素居中（包括 figcaption） */
+}
+
+/* 图片本身 */
+.article-body figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;           /* 图片自身居中（可选，因为父元素已居中） */
+}
+
+/* 图片说明文字 */
+.article-body figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;       /* 说明文字居中 */
+}
+
+/* 以下三段为picture的css代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+    /* 底部横栏 */
+    .footer-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式适配 */
+    @media screen and (max-width: 768px) {
+      .article-title {
+        font-size: 20px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横栏题图 -->
+  <!--  <img class="header-banner" src="../p/00000957485686y.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="../p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="../p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="../p/00000957485686y.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="../p/00000957485686y.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+
+
+  <!-- 导航栏（五个字栏目） -->
+  <nav>
+    <a href="http://www.wmdjy.top/jh2/#home">首页</a>
+    <a href="http://www.wmdjy.top/jh2/#photo">摄影</a>
+    <a href="http://www.wmdjy.top/jh2/#music">歌唱</a>
+    <a href="http://www.wmdjy.top/jh2/#poetry">诵读</a>
+    <a href="#">关于</a>
+  </nav>
+
+  <!-- 主内容区 -->
+  <div class="content">
+    <h1 class="article-title">适合老年业余摄影爱好者的几款手机AI修图工具</h1>
+    <p class="article-meta">学习笔记 发布日期：2026-05-08</p>
+    
+<div class="article-body">
+  <p>推荐两款容易上手操作门槛低的手机AI修图工具，配合即梦、豆包等通用型AI软件的修图功能使用，非常适合业余摄影爱好者快速出高质量的图片。
+  <p><font color="#FF0000"><b>醒图：一键美容与创意设计</b></font>
+  <p>醒图的核心优势在于其强大的AI功能和丰富的模板库，非常适合快速出片。基本功能和使用如下：
+  <p>AI人像美容
+  <p>功能：提供自然磨皮、AI美白、瘦脸瘦身、一键妆容（口红、眼影等）等功能。
+  <p>使用：导入照片后，选择「人像」模块，AI会自动识别人脸和身体。你可以直接使用推荐的参数，或手动微调强度，建议强度不超过60%以保持自然。
+  <p>AI创意编辑
+  <p>功能：包括AI换背景、AI产品精修、模糊照片修复等。
+  <p>换背景：在「抠图」功能中选择「智能抠图」，AI会自动识别人物主体，然后你就可以一键更换为证件照底色或任何风景背景。
+  <p>模糊修复：对于模糊的旧照片或抓拍图，可以使用「调节」中的「超清画质」或「AI修复」功能，一键提升清晰度。
+  <p>滤镜与模板
+  <p>功能：拥有海量的风格化滤镜和“一键同款”模板，涵盖甜妹风、清冷感、港风等。
+  <p>使用：这是醒图最便捷的功能。看到喜欢的模板，直接点击「使用配方」，导入自己的照片，即可秒get同款氛围感大片。
+  <p><font color="#FF0000"><b>Snapseed：免费的全能工具箱</b></font>
+  <p>由 Google 开发，以其“免费、无广告、功能强”而广受好评。
+功能全面：内置超过25种专业工具，覆盖了从基础调整（亮度、对比度）到进阶操作（局部调整、修复、透视校正、双重曝光）的几乎所有需求。
+操作直观：独特的“滑动选择”操作方式非常直观。例如，在“局部”工具中，你可以在照片上放置控制点，然后通过上下滑动选择调整项（亮度、对比度等），左右滑动调整参数大小，学习成本极低。
+精准局部调整：其“局部”和“画笔”工具可以让你对照片的特定区域进行非常精细的调整，比如只提亮人物的面部，或只增加花朵的饱和度。
+完全免费：这是它最大的亮点。所有功能均可免费使用，没有任何隐藏收费或广告干扰，性价比极高。
+Snapseed是入门和日常修图的绝佳选择。虽然界面偏传统，但其内置的“HDR 效果”“细节”“白平衡”等工具底层均融合了 Google 强大的图像算法，能一键提升风景和静物的画质与层次感，属于“傻瓜操作+专业效果”的代表。
+  <p><b><font color="#FF0000">与元宝、即梦通用型 AI 软件配合使用</font></b>
+  <p>元宝、即梦这类通用型生成式 AI 软件也具备相当的自动修图能力，擅长“用自然语言/对话指令让 AI 自动处理图片”。例如：去掉路人（生成新的背景填补）；换背景、换天空；老照片上色、修复（生成式填充）；按输入的指令描述改图。优势是操作简单，擅长内容级修改（在画面中加减景物、更换场景和图像风格等）。但这类通用型生成式AI工具对图片中光影、色彩的精细控制弱，难以做专业级调色；输出画质可能不稳定；调整可控参数少。
+但和专业AI修图软件二者有高度的功能互补性。可以先用元宝、即梦等通用型AI软件做“内容级粗修”（去人、换天等），再进醒图和Snapseed 等专业图像软件做“画质级细修”（调色、锐化等），二者配合可以取得更加完满精致的修图效果。</p>
+
+
+</div>
+  </div>
+
+  <!-- 底部横栏 -->
+ 
+  <!-- 页脚 -->
+  <footer>
+    © 2026 金晖网站 版权所有
+  </footer>
+
+</body>
+</html>
