@@ -2,9 +2,14 @@
 // 轮播图数据配置
 const SLIDESHOW_DATA = [
   {
-    image: 'pt/p/20260430193126.jpg',
-    title: '庆祝五一劳动节（2026.05.01）',
-    alt: '图片1：庆祝五一'
+    image: 'pt/p/IMGP6271b.jpg',
+    title: '六月莲湖看粉红（2026.06.16）',
+    alt: '图片1：粉红莲荷'
+  },
+    {
+    image: 'pt/p/IMGP6307b.jpg',
+    title: '红莲湖畔采风（2026.06.16）',
+    alt: '图片1：莲湖采风'
   },
   {
     image: 'pt/p/20160407cf-01pt.jpg',
