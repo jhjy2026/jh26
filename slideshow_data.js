@@ -1,8 +1,13 @@
 // slideshow_data.js
 // 轮播图数据配置
 const SLIDESHOW_DATA = [
-  {
+    {
     image: 'pt/p/20260701d-01.jpg',
+    title: '热烈庆祝中国共产党成立105周年',
+    alt: '图片：庆祝七一'
+  },
+  {
+    image: 'pt/p/IMGSV-04t.jpg',
     title: '热烈庆祝中国共产党成立105周年',
     alt: '图片：庆祝七一'
   },
