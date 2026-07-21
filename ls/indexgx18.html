@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揽漫天金霞 ——退休后的继续教育学习</title>
+    <style>
+        /* --- 全局样式设置 (适老化设计) --- */
+        :root {
+            --primary-color: #8B4513; /* 深褐色 - 稳重 */
+            --accent-color: #DAA520; /* 金麒麟色 - 呼应金晖 */
+            --bg-color: #FDFBF7; /* 米白色 - 护眼背景 */
+            --text-color: #333333; /* 深灰 - 清晰易读 */
+            --card-bg: #FFFFFF;
+            --font-size-base: 16px; /* 基础字号加大 */
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--bg-color);
+			/*----添加背景图案-----*/
+			/* background-image: url('p/bg-texture957485682.jpg'); */
+			/* 添加这行 */
+			background-blend-mode: overlay; /* 让纹理和颜色融合 */
+			color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+            font-size: var(--font-size-base);
+        }
+
+        /* --- 头部导航 --- */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        nav {
+            background-color: #CC0000;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background: none;
+            border: 2px solid transparent;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        nav button:hover, nav button.active {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* --- 主要内容区域 --- */
+        main {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+            min-height: 60vh;
+        }
+
+        .page-section {
+            display: none; /* 默认隐藏所有页面 */
+            animation: fadeIn 0.5s;
+        }
+
+        .page-section.active {
+            display: block; /* 激活时显示 */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- 首页特有样式 --- */
+        .hero-banner {
+            background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+			    /* 添加图片背景 */
+    /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('p/hero-banner957485674.jpg'); */
+   background-size: cover;
+    background-position: center;
+	/*---以下两行设定div高度，以适应插入背景图片---*/
+	/* width:100%; */
+	/* height:600px; */
+            padding: 4px;
+            border-radius: 15px;
+            text-align: center;
+            color: #4a3b00;
+            margin-bottom: 30px;
+            border: 2px solid var(--accent-color);
+			color: #684e05; /* 确保文字在深色背景上可见 */
+        }
+
+        .hero-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+		/* 自行增加了一个字号h6提供给主页说明框使用，原有的h2太大造成手机界面一行放不下， */
+		/* 使用了em和rem字号单位，em为原局部的基本字号一个大小，rem以整体系统的字号为标准 */
+        .hero-banner h6 {
+            font-size: 1.65rem;
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: grid;
+			/* 缩小了卡片宽度为150，以使八个卡片一行内显示完 */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+/* 以下三段为picture的css代码 */
+picture, picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 针对特定题图容器 */
+.hero-banner picture {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+        /* --- 子页面通用布局 --- */
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            background: #eee;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .sub-nav button {
+            background: #fff;
+            border: 1px solid #ccc;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .sub-nav button.active-tab {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        .content-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: none; /* 子栏目默认隐藏 */
+        }
+        
+        .content-box.active-tab-content {
+            display: block;
+        }
+
+         .resource-list {
+            list-style: none;
+            padding-left: 0;
+        }
+		
+        /* 设置li列表中的图标样式。以下五段样式，加入统一显示li列表中自己另行添加的图片图标24.gjf */
+        
+        .resource-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+			
+			/* 加一下三行解决文本过宽换行打乱显示界面问题 */
+			white-space: nowrap; /* 防止文本换行 */
+    overflow: hidden; /* 隐藏溢出的文本 */
+    text-overflow: ellipsis; /* 显示省略符号 */
+			
+        }
+        
+        .resource-list li:before {
+            content: ''; /* 必须有content属性才能显示伪元素 */
+            position: absolute;
+            left:12px;
+            top: 50%;
+            transform: translateY(-50%);
+			 /* 将图标从12缩小为8 */
+            width: 8px;
+            height: 8px;
+            background-image: url('../p/24.gif');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        /* 修改实际使用时的gif路径 */
+        .resource-list-alt {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .resource-list-alt li {
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .resource-list-alt li::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-image: url('y/p/24.gif');
+            background-repeat: no-repeat;
+            background-size: 16px 16px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .ai-badge {
+            background-color: #e0f7fa;
+            color: #006064;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* --- 页脚 --- */
+        footer {
+            background-color: #99482e;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* --- 响应式调整 --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            nav button { font-size: 1rem; padding: 5px 10px; }
+            .cards-container { grid-template-columns: 1fr; }
+        }
+		
+		  /* 以下为添加li列表中的图标文件，后改为li样式统一解决 */
+		  
+.search-icon {
+    background-image: url('p/24.gif'); /* 替换为实际路径 */
+    background-repeat: no-repeat;
+    background-position: left center; /* 图标靠左居中 */
+    background-size: 10px 10px; /* 调整图标大小 */
+    padding-left: 20px; /* 为图标留出空间 */
+}		
+		
+    </style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bed782faaf1761bf6df295a7adaa1daf";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	
+	
+	
+</head>
+<body>
+
+    <!-- 头部 -->
+  <!--  <img class="header-banner" src="p/a4190d5.jpg" alt="顶部题图"> -->
+
+<picture>
+  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
+  <source 
+    media="(max-width: 768px) and (orientation: portrait)"
+    srcset="p/00000957485686yx.jpg"
+  >
+  
+  <!-- 手机横屏/平板 -->
+  <source 
+    media="(max-width: 1024px)"
+    srcset="p/00000957485686yy.jpg"
+  >
+  
+  <!-- 桌面宽屏 -->
+  <source 
+    media="(min-width: 1920px)"
+    srcset="p/a4190d5.jpg"
+  >
+  
+  <!-- 默认桌面 -->
+  <img 
+    src="p/a4190d5.jpg" 
+    alt="题图"
+    style="width: 100%; height: auto;"
+  >
+</picture>
+	  
+	  
+
+
+    <!-- 主导航 -->
+    <nav>
+        <ul>
+            <li><button onclick="showPage('home')" class="active" id="btn-home">首页</button></li>
+            <li><button onclick="showPage('gzdt')" id="btn-gzdt">&#128247; 工作动态</button></li>
+            <li><button onclick="showPage('ejzv')" id="btn-ejzv">&#127925; 二级组织</button></li>
+            <li><button onclick="showPage('llxx')" id="btn-llxx">&#128220; 理论学习</button></li>
+            <li><button onclick="showPage('vtjy')" id="btn-vtjy">&#128237; 主题教育</button></li>
+            <li><button onclick="showPage('gzjb')" id="btn-gzjb">&#1278249; 工作简报</button></li>
+            <li><button onclick="showPage('wxgh')" id="btn-wxgh">&#127936; 微信公众号</button></li>
+            <li><button onclick="showPage('jhfc')" id="btn-jhfc">&#128252; 金晖风采</button></li>
+            <li><button onclick="showPage('zvjg')" id="btn-zvjg">&#127942; 组织机构</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- === 首页 === -->
+        <section id="home" class="page-section active">
+			   <!-- 插入主页面主题图 -->
+    
+	
+<!-- ===== 开始：外部数据驱动的轮播图 ===== -->
+<link rel="preload" href="slideshow_data-ggw.js" as="script"> <!-- 预加载数据文件 -->
+
+<style>
+/* 轮播图相关样式 */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 20px; /* 居中并设置底部边距 */
+    overflow: hidden; /* 确保图片不会溢出容器 */
+    border-radius: 10px;
+}
+
+.slide {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; /* 使用绝对定位避免占用空间 */
+    width: 100%;
+    height: auto; /* 高度自适应 */
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease; /* 添加淡入淡出过渡效果 */
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* 保持图片宽高比 */
+    display: block;
+    object-fit: cover; /* 可选：如果想填充整个区域但可能裁剪边缘，则使用 cover */
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative; /* 激活的幻灯片使用相对定位，确保其内容（caption）正常显示 */
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    padding: 10px 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; /* 分别对齐左右两边 */
+    align-items: center;
+}
+
+.slide-title {
+    margin: 0;
+    flex-grow: 1; /* 标题占据剩余空间 */
+}
+
+.dots-container {
+    display: inline-block; /* 让点状指示器成行显示 */
+}
+
+.dot {
+    cursor: pointer;
+    height: 5px;  /* 将点状指示器从15缩小为5 */
+    width: 5px;  /* 将点状指示器从15缩小为5 */
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: var(--accent-color, #DAA520); /* 使用CSS变量，若未定义则用默认值 */
+}
+
+/* 左右箭头 */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10; /* 确保箭头在图片上方 */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 响应式：在小屏幕上调整箭头大小 */
+@media (max-width: 768px) {
+    .prev, .next {
+        padding: 10px; /* 缩小箭头 */
+        font-size: 16px;
+    }
+    .slide-caption {
+        font-size: 14px; /* 缩小说明文字 */
+        padding: 8px 10px;
+    }
+}
+</style>
+
+<div class="slideshow-container" id="slideshowContainer">
+  <!-- 幻灯片和控制按钮将通过JavaScript动态生成 -->
+</div>
+
+<script src="slideshow_data-ggw.js"></script> <!-- 引入数据文件 -->
+<script>
+// --- 轮播图逻辑 ---
+let slideIndex = 1;
+let slideInterval; // 用于存储自动轮播的定时器ID
+
+// 检查数据是否加载成功
+if (typeof SLIDESHOW_DATA === 'undefined' || !Array.isArray(SLIDESHOW_DATA) || SLIDESHOW_DATA.length === 0) {
+    console.error("轮播图数据加载失败或为空！");
+    document.getElementById('slideshowContainer').innerHTML = '<p style="text-align:center; color:red;">轮播图数据加载失败，请稍后重试。</p>';
+    // 可以在这里添加一个备用的静态提示或隐藏容器
+    document.getElementById('slideshowContainer').style.display = 'none';
+    // 阻止后续脚本执行
+    throw new Error("SLIDESHOW_DATA not found!");
+}
+
+// 动态生成轮播HTML结构
+function generateSlideshowHTML(data) {
+    const container = document.getElementById('slideshowContainer');
+    let slidesHTML = '';
+    let dotsHTML = '';
+
+    data.forEach((item, index) => {
+        const isActive = index === 0 ? ' active' : ''; // 第一项设为激活
+        const isDotActive = index === 0 ? ' active' : ''; // 第一个点设为激活
+
+        slidesHTML += `
+        <div class="slide${isActive}">
+            <img src="${item.image}" alt="${item.alt}" loading="lazy">
+            <div class="slide-caption">
+                <div class="slide-title">${item.title}</div>
+                <div class="dots-container">
+                    ${data.map((_, i) => `<span class="dot${i === index ? isDotActive : ''}" onclick="currentSlide(${i + 1})"></span>`).join('')}
+                </div>
+            </div>
+        </div>`;
+    });
+
+    // 生成左右箭头
+    const controlsHTML = `
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    `;
+
+    container.innerHTML = slidesHTML + controlsHTML;
+}
+
+// 初始化轮播图
+generateSlideshowHTML(SLIDESHOW_DATA);
+showSlides(slideIndex); // 显示第一张
+
+// 启动自动轮播 (每3秒切换一次)
+startAutoSlide();
+
+// 鼠标悬停时暂停自动轮播，离开时恢复
+document.getElementById('slideshowContainer').addEventListener('mouseenter', stopAutoSlide);
+document.getElementById('slideshowContainer').addEventListener('mouseleave', startAutoSlide);
+
+function plusSlides(n) {
+  clearInterval(slideInterval); // 切换时暂停自动轮播
+  showSlides(slideIndex += n);
+  startAutoSlide(); // 切换后重新启动
+}
+
+function currentSlide(n) {
+  clearInterval(slideInterval); // 点击指示器时暂停自动轮播
+  showSlides(slideIndex = n);
+  startAutoSlide(); // 点击后重新启动
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.querySelectorAll(".slide"); // 使用 querySelectorAll
+  const dots = document.querySelectorAll(".dot"); // 使用 querySelectorAll
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  // 隐藏所有幻灯片
+  slides.forEach(slide => slide.classList.remove('active'));
+  // 移除所有指示器的激活状态
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  // 显示目标幻灯片
+  slides[slideIndex - 1].classList.add('active');
+  // 激活目标指示器
+  dots[slideIndex - 1].classList.add('active');
+}
+
+function startAutoSlide() {
+    slideInterval = setInterval(() => {
+        plusSlides(1);
+    }, 4000); // 4000毫秒 = 4秒 从3秒更改为4秒
+}
+
+function stopAutoSlide() {
+    clearInterval(slideInterval);
+}
+</script>
+<!-- ===== 结束：外部数据驱动的轮播图 ===== -->
+
+                <!-- 一下试验将各卡片点击链接专项关工委网站的相应二级子目录 目录路径已按在线修改，可直接上传服务器。但进入文件须href='http://localhost-->
+            <div class="cards-container">
+                <!-- 动态卡片 -->
+                <div class="course-card" onclick="window.location.href='../uy2602/w/dt.php';" style="cursor: pointer;">
+                    <img src="../pt/15584191yy.gif">
+                    <div class="card-title">佳作赏析</div>
+                    <p>优秀朗诵作品鉴赏分析</p>
+                    <p style="color:#666; font-size:0.9rem;">包含： </p>
+                </div>
+                <!-- 二级卡片 -->
+                <div class="course-card" onclick="window.location.href='../uy2602/w/ej.php';" style="cursor: pointer;">
+                    <img src="../pt/17695805xx.gif" >
+                    <div class="card-title">朗诵习作</div>
+                    <p>学习中的习作</p>
+                    <p style="color:#666; font-size:0.9rem;">包含：</p>
+                </div>
+                <!-- 理论卡片 -->
+                <div class="course-card" onclick="window.location.href='../uy2602/w/ll.php';" style="cursor: pointer;">
+                    <img src="../pt/16768510xx.gif" >
+                    <div class="card-title">参阅资料</div>
+                    <p>朗诵学习资料</p>
+                    <p style="color:#666; font-size:0.9rem;">包含：</p>
+                </div>
+                <!-- 主题教育卡片 -->
+                <div class="course-card" onclick="window.location.href='../uy2602/w/vt.php';" style="cursor: pointer;">
+                    <img src="../pt/15584191yy.gif" >
+                    <div class="card-title">AI学习</div>
+                    <p>学习中的AI工具</p>
+                    <p style="color:#666; font-size:0.9rem;">包含： </p>
+                </div>
+
+            </div>
+			
+			<!-- 建立一个flex的div，其中含四个分两行并排的分栏目块，有不同的颜色和内容,设置均匀分布自动换行，宽度扩大为125% -->
+            <div style="display: flex;justify-content:space-around;flex-wrap:wrap;">
+
+            <div style="margin-top: 40px; background: #ccffff; padding: 20px; border-radius: 10px;width: 20%;">
+                     <img src="y/p/art5036730766xx.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
+            </div>
+            <div style="margin-top: 40px; background: #ede5eb; padding: 20px; border-radius: 10px;width: 35%;">
+                <h3>&#128226; 佳作赏析</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li><a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">《对衰老的回答》 朗诵：乔榛</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF"> 《秋天》 朗诵：王明军</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs8nMf.Dj15">《致橡树》 朗诵：王明军</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs8k2Q.Ba7G">《秋天》 朗诵：曾颖</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">《琵琶行》配乐朗诵：濮存昕</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsZdsa.Dhl9">《乡愁》 朗诵：王明军</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GjvI-C.BAqi">《荷塘月色》朱自清 朗诵：康辉</a></li>
+                    <li> <a href="https://mp.weixin.qq.com/s/0vRU0KDr6brKY44rVR6aXw">《浆声灯影里的秦淮河》朗诵：康辉</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GrQy3B.BUNr">《别慌，才六十岁而已》朗诵：梓洋</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">《读中国》 朗诵：虹云</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">《中国话》 朗诵：虹云</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GjBNJb.CFuz">《将进酒》李白 京剧清唱</a></li>
+                </ul>
+				            
+            </div>
+
+            <div style="margin-top: 40px; background: #ede5eb; padding: 20px; border-radius: 10px;width: 35%;">
+                <h3>&#128226; 朗诵习作</h3>
+				<hr />
+                <ul class="resource-list">
+
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">《乡愁》（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">《枫桥夜泊》（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GpSNiv.Bg1t">《我的南方和北方》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.G2AMOe.h8g">《面朝大海 春暖花开》作者：海子（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvuMkf.CXWK">《学会宽容》（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsuXuz.Lub">《秋天》（朗诵习作）</a></li>
+					
+
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GqICML.DSO6">《致橡树》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">《月光下的中国》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsbnLh.ClL4">《当你老了》（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTmcb.C5zm">《秋天里的中国》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.G2ALjV.a07">《相信未来》作者：食指（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTm_d.2y8">《荷塘月色》（节选）</a></li>
+
+
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GpRr5d.Bs9E">《济南的冬天》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gqd9m6.DHWo">《我喜欢出发》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTfAI.W1z">《将近酒》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gqd84-.CkeS">《满江红》（节选）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GxQYXL.Diyo">《秋天的雨》（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GwiwM9.y_u">《春风一吹草就绿了》（朗诵习作）</a></li>
+
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GybeR4.BibH">《七律 长征》（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GzgDKb.nGB">《第一次盼望》（节选）（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GzgG_X.C7Am">《荷塘月色》（节选）（朗诵习作）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">《四声歌》（朗诵练习）</a></li>
+ 
+                </ul>
+				
+            </div>
+            <div style="margin-top: 40px; background: #ccffff; padding: 20px; border-radius: 10px;width: 20%;">
+
+                     <img src="y/p/2014020120591471733615.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
+            </div>
+			
+
+            <div style="margin-top: 40px; background: #ede5eb; padding: 20px; border-radius: 10px;width: 35%;">
+                <h3>&#128226; 参阅资料</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">《四声歌》（朗诵练习）</a></li>
+                    <li> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GtJjo0.BdVM">容易读错的字 王明军</a></li>
+                    <li> <a href="https://mp.weixin.qq.com/s/ASJXe6wvuHBMvQ1oNFNmFQ">普通话语音训练教程（1-62讲）</a></li>
+
+                </ul>
+            </div>
+            <div style="margin-top: 40px; background: #ede5eb; padding: 20px; border-radius: 10px;width: 35%;">
+                <h3>&#128226; AI学习专栏</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li> <a href="https://mp.weixin.qq.com/s/6YfBaNrFhB28fuHeScqehg">《DeepSeek 中老年人使用指南》</a></li>
+                    <li> <a href="https://mp.weixin.qq.com/s/yB55V5YcM-94g9PHdYhIig">剪映最全编辑技巧，10个步骤让你的视频快速提升</a></li>
+                    <li> <a href="https://mp.weixin.qq.com/s/e9bPRp4MyECfOth2HqopYg">好用的国产AI推荐，10大类30个工具</a></li>
+
+                </ul>
+            </div>			
+	
+			
+			</div>
+
+        </section>
+
+        <!-- === 工作动态子站 === -->
+        <section id="gzdt" class="page-section">
+		   <!-- 插入工作动态主题图 -->
+    <img src="../uy2602/p/pt/t25/230602-1d.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128247; 工作动态</h2>
+
+        <div style="display: flex;justify-content:space-around;flex-wrap:wrap;">            
+            <div id="photo-tab1" class="content-box active-tab-content" style="width: 60%;">
+                <h3>关心下一代工作开展活动情况</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li> <a href="w/w260708.html">习近平回信勉励中国青年五四奖章暨新时代青年先锋奖获奖者代表</a></li>
+                    <li> <a href="w/w260618.html">源清流清 向上向善—新时代我国网络空间正能量建设不断加强</a></li>
+                    <li> <a href="w/m26051701.html">【工作研究】AI大潮给基层组织小型网站功能建设带来的挑战与机遇</a></li>
+                    <li> <a href="w/m26040803.html">全国关工委工作会议在天津召开 </a></li>
+                    <li> <a href="w/w26041601.html">奋楫笃行硕果累累 踵事增华再启新程—全国关工委工作会议侧记</a></li>
+                    <li> <a href="w/w260510-02.html">大国工匠走进大学“培训营”—练本领、悟创新、探前沿</a></li>
+					<li><strong>more  ......
+                </ul>
+            </div>
+
+            <div id="photo-tab1" class="content-box active-tab-content" style="width:430px;height:287px">
+                <img src="../uy2602/p/2023/zf/20231016145142x.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
+ 
+            </div>			
+		<div>	
+
+            <div id="photo-tab2" class="content-box">
+                <h3>我的作业练习</h3>
+                <p>这里展示摄影作业，记录进步过程。</p>
+                <div style="background:#f9f9f9; padding:15px; border:1px dashed #ccc;">
+                    <p><strong>作业回顾：</strong> <a href="w/m26040702.html">原原和曼曼</a></p>
+                    <p><strong>作业回顾：</strong> <a href="w/w260708a.html">校园里的红红绿绿</a></p>
+					<p><strong>作业回顾：</strong> <a href="w/w260708b.html">校园里的老老少少</a></p>
+							<!-- <p><strong>拍摄时间：</strong> 2016年3月10日</p> -->
+                    <!-- <p><em>( )</em></p> -->
+                    <!-- <button style="padding:5px 10px; background:var(--primary-color); color:white; border:none; border-radius:3px; cursor:pointer;">查看大图</button> -->
+                    <p><strong>摄影作业：</strong> <a href="w/m26051701.html">走访溪街七十二坊</a></p>
+                    <p><strong>摄影作业：</strong> <a href="w/w260618.html">夏日莲湖采风-映日荷花别样红</a></p>
+               </div>
+            </div>
+
+            <div id="photo-tab3" class="content-box">
+                <h3>佳作赏析</h3>
+                <p>收集大师名作和班级同学作业交流共同学习。</p>
+                <ul class="resource-list-alt">
+                    <li> <a href="https://www.meipian.cn/5l073d7t?first_share_to=group_singlemessage&share_depth=1&first_share_uid=19898221">摄影旅游：赣粤闽六日行之一 —赣州（万重山外）</a></li>
+                    <li>摄影作品：<a href="http://360vr.artnchina.com/vr3d/8cbjtssfea6/">第三十届全国摄影艺术展览</a></li>
+                    <li>名家赏析：<a href="w/m26041401.html">布列松的“决定性瞬间”理论解读。</a></li>
+                </ul>
+            </div>
+
+            <div id="photo-tab4" class="content-box">
+                <h3>&#129302; AI 摄影工具箱</h3>
+                <p>科技让摄影更简单！以下是几个适合老年人的AI工具：</p>
+                <ul class="resource-list">
+                    <li><strong>AI 一键消除路人：</strong> 拍照时背景有人？如何自动抹除。</li>
+                    <li><strong>老照片修复：</strong> 模糊的家庭旧照，AI可以变清晰并上色。</li>
+                    <li><strong>智能配文：</strong> 不知道照片发朋友圈写什么？AI帮您写诗意文案。</li>
+                </ul>
+                <button style="padding:10px 20px; background:#008CBA; color:white; border:none; border-radius:5px; cursor:pointer;">打开在线AI修图演示</button>
+            </div>
+        </section>
+
+        <!-- === 二级组织子站 === -->
+	
+        <section id="ejzv" class="page-section">
+			<!-- 二级组织主题图 -->
+    <img src="../uy2602/p/pt/t24/20220606t-01d.jpg" alt="二级组织主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#127925; 二级组织</h2>
+
+
+        <div style="display: flex;justify-content:space-around;flex-wrap:wrap;">            
+            <div id="photo-tab1" class="content-box active-tab-content" style="width: 60%;">
+                <h3>二级关工委组织开展工作情况</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li> <a href="w/w260708.html">机械微数：认真学习党章和党纪处分条例，坚定理想信念树立好形象</a></li>
+                    <li> <a href="w/w260618.html">电气建工：组织入党积极分子参加党纪学习教育，学纪知纪明纪守纪</a></li>
+                    <li> <a href="w/m26051701.html">能环公法：深入学习中国式现代化基本内涵重要特征，响应时代召唤</a></li>
+                    <li> <a href="w/m26040803.html">管工艺设：提高思想认识，端正入党动机，增强自身素质</a></li>
+                    <li> <a href="w/w26041601.html">艺设：做有理想、敢担当、能吃苦、肯奋斗的新时代弄潮儿</a></li>
+                    <li> <a href="w/w260510-02.html">管工：提高理论修养增强能力本领，做坚定理想信念的“笃行者”</a></li>
+					<li><strong>more  ......
+                </ul>
+            </div>
+
+            <div id="photo-tab1" class="content-box active-tab-content" style="width:430px;height:287px">
+                <img src="../uy2602/p/2022/zf/20221106064237x.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
+ 
+            </div>			
+		<div>
+
+
+
+
+
+
+            <div id="music-tab2" class="content-box">
+                <h3>排练演出/视频</h3>
+                <p>记录每次排练的声音，对比发现不足。</p>
+                <ul class="resource-list">
+                    <li>&#127908; 《安工大校歌》演唱录音</li>
+                    <li>&#127908; 合唱《祖国不会忘记》录像</li>
+                </ul>
+            </div>
+
+            <div id="music-tab3" class="content-box">
+                <h3>名家演唱赏析</h3>
+                <p>聆听著名合唱团的演出，提升艺术鉴赏力。</p>
+                <ul class="resource-list">
+                    <li>中央乐团《黄河大合唱》经典片段解析。</li>
+                    <li>维也纳童声合唱团的音色特点分析。</li>
+                </ul>
+            </div>
+
+            <div id="music-tab4" class="content-box">
+                <h3>&#129302; AI 音乐工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 定调助手：</strong> 输入歌曲名，AI推荐适合的调。</li>
+                    <li><strong>智能伴奏生成：</strong> 只有旋律没有伴奏？AI寻找钢琴或乐队伴奏。</li>
+                    <li><strong>音准矫正练习：</strong> 跟着AI钢琴练耳，实时反馈音准。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 理论学习子站 === -->
+        <section id="llxx" class="page-section">
+			<!-- 插入理论学习主题图 -->
+    <img src="../uy2602/p/pt/t24/20211222-1.jpg" alt="理论学习主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 理论学习</h2>
+
+            <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>思想教育理论学习</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li> <a href="w/w260708.html">习近平总书记在庆祝中国共产党成立105周年大会上的讲话金句</a></li>
+                    <li> <a href="w/w260618.html">《学习时报》头版刊发中国关工委署名文章《营造关心关爱下一代的社会环境》</a></li>
+                    <li> <a href="w/m26051701.html">智能时代的教育变革与发展 教育部部长怀进鹏在2026世界数字教育大会上的主旨演讲</a></li>
+                    <li> <a href="w/m26040803.html">抢抓人工智能发展的历史性机遇（深入学习贯彻习近平新时代中国特色社会主义思想）—深刻领会习近平总书记关于人工智能的重要论述</a></li>
+                    <li> <a href="w/w26041601.html">金句 | 习近平总书记的重要讲话为建设教育强国指明前进方向</a></li>
+                    <li> <a href="w/w260510-02.html">教育部党组《人民日报》撰文：牢牢把握教育的政治属性、人民属性、战略属性 加快建设教育强国</a></li>
+					<li><strong>more  ......
+                </ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="ls/index.html">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 主题教育子站 === -->
+        <section id="vtjy" class="page-section">
+			<!-- 插入主题教育主题图 -->
+    <img src="../uy2602/p/pt/t26/2022ghbn-00d.jpg" alt="主题教育主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 主题教育</h2>
+            
+            <div class="sub-nav">
+                <button onclick="showTab('poetry', 'tab1')" class="active-tab">&#128218; 本年度主题教育</button>
+                <button onclick="showTab('poetry', 'tab2')">&#9997;&#65039; 2024年度</button>
+                <button onclick="showTab('poetry', 'tab3')">&#127897;&#65039; 2023年度</button>
+                <button onclick="showTab('poetry', 'tab4')">&#129302; 2022年度</button>
+            </div>
+
+            <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>年度大学生主题教育活动</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li><strong> </strong> <a href="w/m26040602.html">关于举办“全国先进工作者”“全国优秀教师”“全国师德先进个人”林钟高老师先进事迹报告会的通知</a></li>
+                    <li><strong> </strong> <a href="w/m26040701.html">立志做有理想、敢担当、能吃苦、肯奋斗的新时代好青年—校关工委举办全国先进工作者林钟高教授报告会</a></li>
+                    <li><strong> </strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">2024年度主题教育“教育强国 奋斗有我”</a></li>
+                    <li><strong> </strong> <a href="w/m26040602.html">2023年度主题教育“老少共话二十大 踔厉奋发新征程”</a></li>
+                    <li><strong> </strong> <a href="w/m26040701.html">2022年度主题教育“共话百年奋斗 争做时代新人”</a></li>
+                    <li><strong> </strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">2021年度主题教育“讲好入党故事 传承红色基因”</a></li>
+                    <li><strong> </strong> <a href="w/m26040602.html">2020年度主题教育“读懂中国 奋斗有我”</a></li>
+                    <li><strong> </strong> <a href="w/m26040701.html">2019年度主题教育“放飞中国梦 奋斗强中华”</a></li>
+                    <li><strong> </strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">2018年度主题教育“放飞中国梦 高歌新时代”</a></li>
+					<li><strong>more  ......
+                </ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="ls/index.html">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 工作简报子站 === -->
+        <section id="gzjb" class="page-section">
+			<!-- 插入工作简报主题图 -->
+    <img src="pt/p/IMGSV-04t.jpg" alt="工作简报主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 工作简报</h2>
+
+            <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>月度工作开展情况简报</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li><strong>2024.04：</strong> <a href="w/m26040602.html">关工委《工作信息》第182期</a></li>
+                    <li><strong>2024.03：</strong> <a href="w/m26040701.html">关工委《工作信息》第181期</a></li>
+                    <li><strong>2024.02：</strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9"> 关工委《工作信息》第180期</a></li>
+                    <li><strong>2024.01：</strong> <a href="w/m26040602.html">关工委《工作信息》第179期</a></li>
+                    <li><strong>2023.12：</strong> <a href="w/m26040701.html">关工委《工作信息》第178期</a></li>		
+                    <li><strong>2024.01：</strong> <a href="w/m26040602.html">关工委《工作信息》第177期</a></li>
+                    <li><strong>2023.12：</strong> <a href="w/m26040701.html">关工委《工作信息》第176期</a></li>
+                    <li><strong>2024.01：</strong> <a href="w/m26040602.html">关工委《工作信息》第175期</a></li>
+                    <li><strong>more  ......							
+                </ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="ls/index.html">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 微信公众号子站 === -->
+        <section id="wxgh" class="page-section">
+			<!-- 插入微信公众号主题图 -->
+    <img src="pt/p/IMGP6271b.jpg" alt="微信公众号主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 微信公众号</h2>
+
+            <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>学校关工委微信公众号平台《关心与关爱》</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li><strong>学习材料：</strong> <a href="https://mp.weixin.qq.com/s/ahODxhxBIZcLN8qlHALEdw">中共教育部党组《人民日报》撰文：牢牢把握教育的政治属性、人民属性、战略属性 加快建设教育强国</a></li>
+                    <li><strong>精选辅导：</strong> <a href="w/m26040701.html">一图解读《教育强国建设规划纲要（2024－2035年）》</a></li>
+                    <li><strong>信息快递：</strong> <a href="https://mp.weixin.qq.com/s/XIOlhCG4biLMQFH5ThE-Xg">校关工委召开中心组专题学习会—邀请学工部部长赵龙介绍当前学生工作新形势和重点工作</a></li>
+                    <li><strong>主题教育：</strong> <a href="https://mp.weixin.qq.com/s/Gbc5Z-7qtK_1APIvob9DNg">校关工委举办全国先进工作者林钟高教授报告会—立志做有理想、敢担当、能吃苦、肯奋斗的新时代好青年</a></li>
+                    <li><strong>党建谈话：</strong> <a href="https://mp.weixin.qq.com/s/EBB9eAExQgP2s-BgI3YSKg">“怎样做好一名入党积极分子？”—关工委召开党建培养活动学习动员和专题辅导会</a></li>
+                    <li><strong>信息快递：</strong> <a href="https://mp.weixin.qq.com/s/F6YMW80NBhHboO6hbTvPcg">交流工作体会和做法 提出工作意见和建议 —校关工委召开帮扶组学期工作总结会</a></li>
+                    <li><strong>more  ......
+					</ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="ls/index.html">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 金晖风采子站 === -->
+        <section id="jhfc" class="page-section">
+			<!-- 插入金晖风采主题图 -->
+    <img src="pt/p/20240628111647pt.jpg" alt="金晖风采主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 金晖风采</h2>
+
+            <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>关工委老同志文化艺术风采展示</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li><strong></strong> <a href="http://wmdjy.top/ggw/p/2023/zf/202310zf-02.mp4">关工委老同志在新生宿舍走访座谈活动中</a></li>
+                    <li><strong></strong> <a href="https://mp.weixin.qq.com/s/QQJkCIt_UanxcqZkpTo3oQ">校关工委获安徽省教育系统关心下一代工作先进集体先进个人多项荣誉称号</a></li>
+                    <li><strong></strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.ErOXfn.BDMk">五月里老同志校园摄影采风</a></li>
+                    <li><strong></strong> <a href="2022/w-p-20221001.htm">喜迎国庆关工委老同志摄影：我们可爱的校园</a></li>
+                    <li><strong></strong> <a href="2022/w-p-20220930.htm">喜迎国庆关工委老同志摄影：我们美丽的马鞍山园林</a></li>
+                    <li><strong></strong> <a href="2022/w-p-202207ddvg-01.htm">共话百年奋斗 争做时代新人—老同志在“读懂中国”年度主题教育中</a></li>
+                    <li><strong></strong> <a href="2013/w-130606-yv.htm">老同志"多彩六一 金色童年"摄影网展</a></li>
+                    <li><strong>more  ......
+					</ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="ls/index.html">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === 组织机构子站 === -->
+        <section id="zvjg" class="page-section">
+			<!-- 插入金组织机构主题图 -->
+    <img src="pt/p/IMGP6307b.jpg" alt="组织机构主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+            <h2 style="border-bottom: 2px solid var(--accent-color); padding-bottom: 10px;">&#128220; 组织机构</h2>
+            
+                <div id="poetry-tab1" class="content-box active-tab-content">
+                <h3>两级组织机构与工作群组</h3>
+				<hr />
+                <ul class="resource-list">
+                    <li><strong> </strong> <a href="w/m26040602.html">关于调整基层关心下一代工作委员会主任、副主任的通知</a></li>
+                    <li><strong> </strong> <a href="w/m26040701.html">安徽工业大学关心下一代工作委员会人员组成</a></li>
+                    <li><strong> </strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">相关网络工作群</a></li>
+                    <li><strong> </strong> <a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTPK1.CuH9">相关网络工作平台</a></li>
+					<li><strong>more  ......
+                </ul>
+            </div>
+
+            <div id="poetry-tab2" class="content-box">
+                <h3>我的朗诵录音</h3>
+                <p>记录声音的蜕变。</p>
+                <ul class="resource-list-alt">
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gsbm4q.COIm">习作：《乡愁》 (2026-03-10)</a></li>	
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GsvB0W.Bl3y">习作：《枫桥夜泊》 (2026-03-10)</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GnTL0K.hhP">习作：《月光下的中国》 (2026-03-14)</a></li>
+                    <li>　<a href="ls/index.html">笔记和习作辑录：《诗歌与朗诵》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab3" class="content-box">
+                <h3>经典朗诵欣赏</h3>
+                <ul class="resource-list">
+                   <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GvRTtb.BZhl">乔榛朗诵：《对衰老的回答》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gs4Rbw.BSxF">王明军朗诵：《秋天》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.Gq3Fh9.MzO">濮存昕朗诵：《琵琶行》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIcbH.CVhG">虹云朗诵：《读中国》</a></li>
+                    <li>　<a href="https://wx.xiaoniangao.cn/share/album.html?lid=BAEd7.GyIdDU.Cdrm">虹云朗诵：《中国话》</a></li>
+                </ul>
+            </div>
+
+            <div id="poetry-tab4" class="content-box">
+                <h3>&#129302; AI 朗诵工具箱</h3>
+                <ul class="resource-list">
+                    <li><strong>AI 配乐大师：</strong> AI自动匹配最合适的背景音乐。</li>
+                    <li><strong>情感曲线分析：</strong> 朗读后，AI分析情感起伏是否到位。</li>
+                    <li><strong>大字版提词器：</strong> 屏幕显示超大字体的稿件，方便背诵。</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+	<img src="p/3ba66c531f01b84a9fd0-y.jpg" alt="页脚" style="width:80%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:20px;">
+        <p>版权所有 &copy; 2026 金晖天地 | 设计：Dawn25</p>
+        <p>愿我们永远年轻，永远心有梦想。</p>
+    </footer>
+
+    <script>
+// 切换主页面函数
+function showPage(pageId) {
+    // 隐藏所有页面
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // 取消所有导航按钮激活状态
+    const navButtons = document.querySelectorAll('nav button');
+    navButtons.forEach(btn => btn.classList.remove('active'));
+
+    // 显示目标页面
+    document.getElementById(pageId).classList.add('active');
+    
+    // 激活对应导航按钮
+    const activeBtn = document.getElementById('btn-' + pageId);
+    if(activeBtn) activeBtn.classList.add('active');
+
+    // 滚动到顶部
+    window.scrollTo(0, 0);
+
+    // --- 新增：向浏览器历史记录添加状态 ---
+    // 创建一个状态对象，可以包含任意数据，这里用 pageId 作为标识
+    const stateObj = { page: pageId };
+    // 使用 pushState 更新浏览器 URL 和历史记录
+    // 参数：stateObject, title (通常可以为 null), url (相对路径)
+    history.pushState(stateObj, null, '#' + pageId);
+}
+
+// 切换子栏目函数 (如：课堂讲义 -> 习作园地)
+function showTab(parentId, tabName) {
+    // 找到当前父容器下的所有内容块
+    const parentSection = document.getElementById(parentId);
+    const contents = parentSection.querySelectorAll('.content-box');
+    
+    // 隐藏该内容块下的所有子栏目
+    contents.forEach(content => content.classList.remove('active-tab-content'));
+
+    // 找到当前父容器下的所有子导航按钮
+    const buttons = parentSection.querySelectorAll('.sub-nav button');
+    buttons.forEach(btn => btn.classList.remove('active-tab'));
+
+    // 显示目标子栏目
+    document.getElementById(parentId + '-' + tabName).classList.add('active-tab-content');
+
+    // 激活被点击的按钮
+    // 注意：这里 event.target 是正确的，因为我们是在 onclick 事件处理器中
+    event.target.classList.add('active-tab');
+
+    // --- 新增：向浏览器历史记录添加状态 (子模块) ---
+    const stateObj = { page: parentId, tab: tabName };
+    history.pushState(stateObj, null, '#' + parentId + '-' + tabName);
+}
+
+
+// --- 新增：监听浏览器的 popstate 事件 ---
+// 当用户点击前进/后退按钮时触发
+window.addEventListener('popstate', function(event) {
+    // event.state 包含了 pushState 时传入的状态对象
+    if (event.state && event.state.page) {
+        const targetPage = event.state.page;
+        const targetTab = event.state.tab; // 可能为 undefined
+
+        // 如果有子标签页信息，优先恢复子标签页
+        if (targetTab) {
+            // 首先确保父页面是激活的
+            showPage(targetPage); 
+            // 然后延迟一点时间再切换到指定子标签页，确保父页面已加载
+            setTimeout(() => {
+                 // 模拟点击对应的子标签按钮来切换内容
+                 const subNavButtons = document.querySelectorAll(`#${targetPage} .sub-nav button`);
+                 subNavButtons.forEach(btn => {
+                     // 查找按钮的 onclick 属性，看它是否调用 showTab 且参数匹配
+                     const onclickStr = btn.getAttribute('onclick');
+                     if (onclickStr && onclickStr.includes(`'${targetTab}'`)) {
+                         // 手动触发 showTab 逻辑，但不调用 pushState (避免循环)
+                         // 更简洁的方式是直接调用 showSlides 逻辑，但为了复用，我们模拟点击
+                         // 实际上，直接操作 DOM 状态更可靠
+                         const contents = document.querySelectorAll(`#${targetPage} .content-box`);
+                         const buttons = document.querySelectorAll(`#${targetPage} .sub-nav button`);
+                         // 重置
+                         contents.forEach(content => content.classList.remove('active-tab-content'));
+                         buttons.forEach(btn => btn.classList.remove('active-tab'));
+                         // 激活
+                         document.getElementById(`${targetPage}-${targetTab}`).classList.add('active-tab-content');
+                         btn.classList.add('active-tab'); // 激活对应的按钮
+                         return; // 找到后退出循环
+                     }
+                 });
+            }, 0); // 使用 0 延迟确保 showPage 完全执行后再操作子标签
+            
+        } else {
+            // 如果没有子标签页信息，只恢复主页面
+            showPage(targetPage);
+        }
+        
+    } else {
+        // 如果 state 为空，可能回到了初始状态或无效状态，可以重定向到首页
+        // 或者什么都不做，保持当前状态
+        // showPage('home'); // 如果你想默认回到首页，取消此行注释
+    }
+});
+
+// --- 新增：页面加载时根据 URL Hash 初始化状态 ---
+// 当页面首次加载或刷新时，根据 URL 的 hash 部分 (#home, #photo-tab1 等) 来恢复状态
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.substring(1); // 移除开头的 '#'
+    if (hash) {
+        // 检查是否包含子标签页标识 (例如 photo-tab1)
+        const parts = hash.split('-');
+        if (parts.length === 2) {
+            const page = parts[0];
+            const tab = parts[1];
+            // 确保主页面存在且被激活
+            if (document.getElementById(page)) {
+                showPage(page);
+                // 延迟切换子标签页
+                setTimeout(() => {
+                    // 检查子标签页是否存在
+                    if (document.getElementById(`${page}-${tab}`)) {
+                        // 直接操作 DOM 恢复子标签页状态
+                        const contents = document.querySelectorAll(`#${page} .content-box`);
+                        const buttons = document.querySelectorAll(`#${page} .sub-nav button`);
+                        // 重置
+                        contents.forEach(content => content.classList.remove('active-tab-content'));
+                        buttons.forEach(btn => btn.classList.remove('active-tab'));
+                        // 激活
+                        document.getElementById(`${page}-${tab}`).classList.add('active-tab-content');
+                        // 找到并激活对应的按钮
+                        buttons.forEach(btn => {
+                            const onclickStr = btn.getAttribute('onclick');
+                            if (onclickStr && onclickStr.includes(`'${tab}'`)) {
+                                btn.classList.add('active-tab');
+                            }
+                        });
+                        
+                        // 滚动到顶部
+                        window.scrollTo(0, 0);
+                    }
+                }, 0);
+            }
+        } else {
+            // 如果 hash 只包含主页面 (例如 home, photo)
+            if (document.getElementById(hash)) {
+                showPage(hash);
+            }
+        }
+    }
+    // 如果没有 hash，默认显示首页 (如果需要的话)
+    // if (!window.location.hash && !document.querySelector('.page-section.active')) {
+    //     showPage('home');
+    // }
+});
+    </script>
+</body>
+</html>
