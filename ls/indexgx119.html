@@ -335,6 +335,22 @@ picture, picture img {
     background-size: 10px 10px; /* 调整图标大小 */
     padding-left: 20px; /* 为图标留出空间 */
 }		
+		  /* 以下为题图居中的相关代码段 */
+.header-bg {
+  width: 100%; /* 或固定宽度如 1200px */
+  height: 170px;
+  background-image: url('y/p/lsvy-01-2.jpg');
+  background-position: center;
+  background-size: cover; /* 或 contain */
+  background-repeat: no-repeat;
+  margin: 0 auto; /* 若需整个 header 块在页面居中，需额外设 width < 100% */
+              display: block;       /* 关键：转为块级元素 */
+            max-width: 1400px;     /* 关键：限制最大宽度，可根据需求修改数值 */
+            width: 100%;          /* 响应式：在小屏幕上自动缩小 */
+            /* height: auto;         取消了保持宽高比，呼应上面宽170px */
+            margin: 0 auto;       /* 关键：左右外边距自动，实现水平居中 */
+}
+
 		
     </style>
 
@@ -353,35 +369,16 @@ var _hmt = _hmt || [];
 </head>
 <body>
 
+    <div class="header-container" >
+        <!-- 替换为你的图片地址 -->
+        <img src="y/p/lsvy-01-2.jpg" alt="顶部题图" class="header-bg">
+    </div>
+
+
     <!-- 头部 -->
   <!--  <img class="header-banner" src="y/p/lsvy-01-2.jpg" alt="顶部题图"> -->
 
-<picture>
-  <!-- 手机竖屏：使用裁剪后的方形/竖版图 -->
-  <source 
-    media="(max-width: 768px) and (orientation: portrait)"
-    srcset="y/p/lsvy-01-2.jpg"
-  >
-  
-  <!-- 手机横屏/平板 -->
-  <source 
-    media="(max-width: 1024px)"
-    srcset="y/p/lsvy-01-2.jpg"
-  >
-  
-  <!-- 桌面宽屏 -->
-  <source 
-    media="(min-width: 1920px)"
-    srcset="y/p/lsvy-01-2.jpg"
-  >
-  
-  <!-- 默认桌面 -->
-  <img 
-    src="y/p/lsvy-01-2.jpg" 
-    alt="题图"
-    style="width: 70%; height: auto;"
-  >
-</picture>
+
 	  
 	  
 
@@ -618,28 +615,28 @@ function stopAutoSlide() {
                 <!-- 一下试验将各卡片点击链接专项关工委网站的相应二级子目录 目录路径已按在线修改，可直接上传服务器。但进入文件须href='http://localhost-->
             <div class="cards-container">
                 <!-- 动态卡片 -->
-                <div class="course-card" onclick="window.location.href='../uy2602/w/dt.php';" style="cursor: pointer;">
+                <div class="course-card" onclick="window.location.href='../ls/indexgx119.html';" style="cursor: pointer;">
                     <img src="../pt/15584191yy.gif">
                     <div class="card-title">佳作赏析</div>
                     <p>优秀朗诵作品鉴赏分析</p>
                     <p style="color:#666; font-size:0.9rem;">包含： </p>
                 </div>
                 <!-- 二级卡片 -->
-                <div class="course-card" onclick="window.location.href='../uy2602/w/ej.php';" style="cursor: pointer;">
+                <div class="course-card" onclick="window.location.href='../ls/indexgx119.html';" style="cursor: pointer;">
                     <img src="../pt/17695805xx.gif" >
                     <div class="card-title">朗诵习作</div>
                     <p>学习中的习作</p>
                     <p style="color:#666; font-size:0.9rem;">包含：</p>
                 </div>
                 <!-- 理论卡片 -->
-                <div class="course-card" onclick="window.location.href='../uy2602/w/ll.php';" style="cursor: pointer;">
+                <div class="course-card" onclick="window.location.href='../ls/indexgx119.html';" style="cursor: pointer;">
                     <img src="../pt/16768510xx.gif" >
                     <div class="card-title">参阅资料</div>
                     <p>朗诵学习资料</p>
                     <p style="color:#666; font-size:0.9rem;">包含：</p>
                 </div>
                 <!-- 主题教育卡片 -->
-                <div class="course-card" onclick="window.location.href='../uy2602/w/vt.php';" style="cursor: pointer;">
+                <div class="course-card" onclick="window.location.href='../ls/indexgx119.html';" style="cursor: pointer;">
                     <img src="../pt/15584191yy.gif" >
                     <div class="card-title">AI学习</div>
                     <p>学习中的AI工具</p>
@@ -728,7 +725,7 @@ function stopAutoSlide() {
 			
 			            <div style="margin-top: 10px; background: #ccffff; padding: 20px; border-radius: 10px;width: 30%;">
 
-                     <img src="y/p/2014020120591471733615.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
+                     <img src="y/p/BeCP6jvJ_jFIqkjVGX4c05.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
                       </div>
 			          <div style="margin-top: 10px; background: #ede5eb; padding: 20px; border-radius: 10px;width: 45%;">
                 <h3>&#128226; 参阅资料</h3>
@@ -745,7 +742,7 @@ function stopAutoSlide() {
 			
 			            <div style="margin-top: 10px; background: #ccffff; padding: 20px; border-radius: 10px;width: 30%;">
 
-                     <img src="y/p/2014020120591471733615.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
+                     <img src="y/p/20260105194412.jpg" alt="工作动态主题" style="width:100%; height:auto; object-fit:cover; border-radius:10px; margin-bottom:2px;">
                         </div>
 			           <div style="margin-top: 10px; background: #ede5eb; padding: 20px; border-radius: 10px;width: 45%;">
                 <h3>&#128226; AI学习专栏</h3>
