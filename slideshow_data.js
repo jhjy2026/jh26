@@ -2,6 +2,16 @@
 // 轮播图数据配置
 const SLIDESHOW_DATA = [
     {
+    image: 'pt/p/vq26-01.jpg',
+    title: '中秋节快乐！',
+    alt: '图片：庆祝七一'
+  },
+  {
+    image: '../cj26/p/pt/t26/yyxn20260904152655.jpg',
+    title: '热烈欢迎2026级新生来校！',
+    alt: '图片：庆祝七一'
+  },
+    {
     image: 'pt/p/20260701d-01.jpg',
     title: '热烈庆祝中国共产党成立105周年',
     alt: '图片：庆祝七一'
