@@ -2,7 +2,7 @@
 // 轮播图数据配置
 const SLIDESHOW_DATA = [
     {
-    image: '../cj26/p/pt/t26/goqy-02.jpg',
+    image: 'pt/p/goqy-02.jpg',
     title: '热烈庆祝中华人民共和国成立七十七周年！',
     alt: '图片：庆祝七一'
   },
